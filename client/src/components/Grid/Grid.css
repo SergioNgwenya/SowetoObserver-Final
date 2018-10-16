@@ -1,0 +1,7 @@
+.Grid > div{
+    background: pink;
+    padding: 1em;
+}
+.Grid > div:nth-child(odd){
+    background: blue;
+}

@@ -1,0 +1,360 @@
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(http://fonts.googleapis.com/css?family=Gudea);
+
+/* footer */
+.footers{
+    background-color: #424242;
+    color: white;
+    /* padding-bottom: 5px;
+    padding-top: 15px; */
+    background-position: 100px;
+    text-transform: uppercase;
+    font-size: 0.7142em;
+    padding: 0.5rem 0.7rem;
+    line-height: 1.625rem;
+    /* margin-bottom:100px; */
+    
+
+}
+.copyright a {
+    text-align: center;
+    color: white;
+    
+}
+.footer .copyright {
+    text-align: center;
+    color: white;
+ }
+
+   
+    .footers{
+        margin-top: 120px;
+        
+    }
+    .videos{
+    
+        margin: auto;
+        width: 100%;  
+        
+        -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+-moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+padding-top:15px ;
+
+       
+    }
+    /* .videos p{
+        font-size: 5px;
+    }
+     */
+
+    /* about page */
+.About{
+    text-align: center;
+    background-color: whitesmoke;
+    margin: auto;
+    width: 50%;
+
+} 
+/* .About h3{
+    text-align: center;
+    }
+    .About h4{
+        text-align: center;
+        }
+        .About p{
+            text-align: center;
+            } */
+            .nomargin { margin:10px; padding-top:10px;text-align: center;font-size: 12px;margin-bottom: 10px;color: white;}          
+            /* 
+            Only Needed in Multi-Coloured Variation 
+                                               */
+            .social-fb {
+                color: #3B5998;
+            }
+            .social-tw {
+                color: #4099FF;
+            }
+            .social-gp {
+                color: #d34836;
+            }
+            .social-em {
+                color: #f39c12;
+            }
+.tim-row{
+    margin-bottom: 20px;
+}
+
+.tim-white-buttons {
+    background-color: #777777;
+}
+.typography-line{
+    padding-left: 25%;
+    margin-bottom: 35px;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.typography-line span{
+    bottom: 10px;
+    color: #c0c1c2;
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    left: 0;
+    position: absolute;
+    width: 260px;
+    text-transform: none;
+}
+.tim-row{
+    padding-top: 60px;
+}
+.tim-row h3{
+    margin-top: 0;
+}
+
+.offline-doc .page-header{
+  display: flex;
+  align-items: center;
+}
+
+.offline-doc .footer{
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  bottom: 0;
+  color: #fff;
+  z-index: 1;
+}
+.sidebar .nav > li.active-pro{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+}
+.sidebar .nav > li.active-pro a{
+    background: rgba(255, 255, 255, 0.14);
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+
+.footer{
+    background-color: #424242;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 50px;
+}
+
+.copyright{
+    text-align: center;
+}
+
+/* NavBar */
+
+ .Navbar1{
+     background-color: #424242;
+     padding-bottom: 10px;
+     padding-top: 10px;   
+ }
+ /* Entertainment */
+ 
+ 
+
+ .Container{
+    margin: auto;
+    width: 100%;
+    -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+-moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+padding-top:15px ;
+
+}
+.videos{
+
+    margin: auto;
+    width: 100%;  
+    background-color:snow
+    /* -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+    padding-top:15px ; */
+}
+.videos p{
+    font-size: 5px;
+}
+
+/* Nav */
+
+ .Navigation{
+     background-color: white;
+     color: #101010;
+ }
+
+/* Community Service */
+
+.CM_image{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.CM_Card{
+    margin: 15px;
+    
+}
+
+.CM_Media{
+    border: solid black 1px;
+}
+
+.footer .copyright {
+    text-align: center; }
+
+.top_stories{
+    color: red;
+    margin-left: 17px;
+    font-weight: 510;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+#social:hover {
+    -webkit-transform:scale(1.1); 
+    -moz-transform:scale(1.1); 
+    -o-transform:scale(1.1); 
+    }
+    social {
+        -webkit-transform:scale(0.8);
+        /* Browser Variations: */
+    -moz-transform:scale(0.8);
+    -o-transform:scale(0.8); 
+    -webkit-transition-duration: 0.5s; 
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    }           
+    /* 
+    Only Needed in Multi-Coloured Variation 
+                                       */
+    .social-fb:hover {
+        color: #3B5998;
+    }
+    .social-tw:hover {
+        color: #4099FF;
+    }
+    .social-gp:hover {
+        color: #d34836;
+    }
+    .social-em:hover {
+        color: #f39c12;
+    }
+    .nomargin { margin:0px; padding:0px;}
+    
+    /* .card-text{
+        text-align: left;
+        
+    }
+    .card-block{
+        background: whitesmoke;
+    } */
+    /* About Us page css */
+    /* .AboutUs{
+        text-align: center;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 8px;
+    } */
+    
+
+
+/* Cards */
+.Cards{
+    margin-top: 1px;
+    margin-left: 5px;
+}
+
+.CardsInfo{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Media Cards */
+.Media_card{
+    margin: 15px;
+    padding-left:15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.Media_body{
+    padding-left: 15px;
+    padding-top: 0px;
+}
+
+.CardImg{
+    width: 350px;
+    height: 250px;
+}
+
+body::-webkit-scrollbar {
+    width: 0.4em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px orangered;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #101010;
+  outline: 1px solid #101010;
+}
+
+.news-h-scroll{
+    display: flex; 
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.news-h-scroll::-webkit-scrollbar{
+    height: 0.5em;
+    background-color: orangered;
+}
+.news-h-scroll::-webkit-scrollbar-track{
+    
+}
+.news-h-scroll::-webkit-scrollbar-button{
+    
+}
+.news-h-scroll::-webkit-scrollbar-thumb{
+    background-color: #101010;
+    width: 20px;
+    border-radius: 30px;
+}
+
+.headlines::-webkit-scrollbar{
+    width: 0.3em;
+    background-color: orangered;
+}
+.headlines::-webkit-scrollbar-thumb{
+    background-color: #101010;
+}
+
+.ReactTable{
+    border: none !important;
+  }
+  
+  .ReactTable .rt-thead{
+    padding: 5px;
+    font-weight: 700;
+    text-align: left;
+  }
+  .ReactTable .rt-thead .rt-th{
+    text-align: left;
+    border: none;
+  }
+  
+  .ReactTable .rt-tbody .rt-td{
+    padding: 15px;
+  }
