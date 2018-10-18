@@ -1,14 +1,19 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Jumbotron } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 
 class About extends React.Component {
   render() {
     return (
+      
       <div className="AboutPage" >
         <Container style={{ textAlign: 'center', fontFamily: 'Nova Flat'}}>
-
+        <div className="Jumbotron">
+            <Jumbotron style={{ textAlign: 'center', height: '60px', marginTop: "70px", paddingTop: "40px" }} >
+              <h3 className="lead">{(this.props.match.params.category).toUpperCase()}</h3>
+            </Jumbotron>
+          </div>
           <h2 className="Header">About Soweto Observer</h2>
 
           <br />

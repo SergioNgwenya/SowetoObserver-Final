@@ -9,6 +9,7 @@ import Headlines from '../../components/Headline/Headlines';
 import Navs from '../../components/Navs/Navs';
 import { connect } from 'react-redux';
 import BigNews from "../../components/NewsComp/BigNews";
+import SmallNews from '../../components/NewsComp/SmallNews';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
@@ -28,6 +29,7 @@ class Home extends Component {
             <Col md='9'>
             <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Breaking News</h3>
             <TopHead/>
+            <hr />
             <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Top Stories</h3>
             {(this.props.articles && this.props.articles.length > 0) &&
              <div className="row">
@@ -35,9 +37,11 @@ class Home extends Component {
                     {
                       this.props.articles.map((a, i) => {
                         return (
+                          
                           <Link to={"/viewstory/" + a._id}><BigNews news={a} /></Link>
                         )
                       })
+                      
                     }
                   </div>
                     :
@@ -47,11 +51,12 @@ class Home extends Component {
              
               {/* <BigNews news={this.props.articles[1]} /> */}
               </div>}
+              
               <hr />
               <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>HEADLINES</h3>
               <Headlines />
             </Col>
-
+                      
             <Col md='3'>
               <AdCorner />
               <FB_Int />

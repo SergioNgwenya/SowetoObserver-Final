@@ -6,6 +6,7 @@ import AdCorner from './Home/component/adComponent';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import loading from '../../src/images/loader.gif';
+import ButtonExampleInverted from '../components/button/buttonBack';
 import Moment from 'react-moment';
 // import Moment from 'react-moment';
 //import * as FontAwesome from 'react-icons/lib/fa'
@@ -30,26 +31,25 @@ class ViewStory extends React.Component {
                     <Col xs="9">
                         {article ? <Row>
                             <Card>
-                                                    <CardImg top src={article.picture} alt="Card image cap" /> 
-                                                    <CardText><h2>{article.title}</h2></CardText>
-                                                    <div class="container">
-                                                            <Row>
-                                                                <Col><span className="float-right"><i class="fa fa-clock"></i><Moment  format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
-                                                             </Row>
-                                                            
-                                                        </div>
-                                                    <CardBody> {renderHTML(article.body)}
-                                                    </CardBody>
+                                <CardImg top src={article.picture} alt="Card image cap" />
+                                <CardText><h2>{article.title}</h2></CardText>
+                                <div class="container">
+                                    <Row>
+                                        <Col><span className="float-right"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
+                                    </Row>
 
-                                                </Card>
+                                </div>
+                                <CardBody> {renderHTML(article.body)}
+                                <ButtonExampleInverted/>
+                                </CardBody>
+
+                            </Card>
 
                         </Row>
                             :
                             <img src={loading} alt="loading" style={{ paddingLeft: '35%', height: 200, width: 'auto' }} />
                         }
-                        <Row>
-                            <Col md={12}></Col>
-                        </Row>
+                        
                     </Col>
                     <Col xs="3">
                         <AdCorner />
