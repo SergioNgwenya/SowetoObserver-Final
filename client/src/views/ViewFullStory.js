@@ -38,9 +38,9 @@ class ViewStory extends React.Component {
                                                              </Row>
                                                             
                                                         </div>
-                                                    <CardBody> {renderHTML(article.body)}
+                                                    <CardBody>
+                                                        {renderHTML(article.body)}
                                                     </CardBody>
-
                                                 </Card>
 
                         </Row>
