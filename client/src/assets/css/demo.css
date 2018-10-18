@@ -334,11 +334,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .headlines::-webkit-scrollbar{
-    width: 0.3em;
-    background-color: orangered;
+    width: 0.6em;
+    background-color: wheat;
 }
 .headlines::-webkit-scrollbar-thumb{
-    background-color: #101010;
+    background-color: grey;
 }
 
 .ReactTable{
@@ -357,4 +357,8 @@ body::-webkit-scrollbar-thumb {
   
   .ReactTable .rt-tbody .rt-td{
     padding: 15px;
+  }
+
+  .adCard{
+      margin-top: 36px;
   }

@@ -18,30 +18,23 @@ class ViewStory extends React.Component {
         const { article } = this.props;
         return (
             <Container>
-                <Row>
-                    <Col md={9}>
-                    </Col>
-                    <Col md={3}>
-                    </Col>
-                </Row>
 
-                <hr />
                 <Row>
                     <Col xs="9">
                         {article ? <Row>
                             <Card>
-                                                    <CardImg top src={article.picture} alt="Card image cap" /> 
-                                                    <CardText><h2>{article.title}</h2></CardText>
-                                                    <div class="container">
-                                                            <Row>
-                                                                <Col><span className="float-right"><i class="fa fa-clock"></i><Moment  format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
-                                                             </Row>
-                                                            
-                                                        </div>
-                                                    <CardBody> {renderHTML(article.body)}
-                                                    </CardBody>
+                                <CardText><h2>{article.title}</h2></CardText>
+                                <CardImg top src={article.picture} alt="image" />
+                                <div class="container">
+                                    <Row>
+                                        <Col><span className="float-right"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
+                                    </Row>
+                                </div>
 
-                                                </Card>
+                                <CardBody> 
+                                  {renderHTML(article.body)}
+                                </CardBody>
+                            </Card>
 
                         </Row>
                             :

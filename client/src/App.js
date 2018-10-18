@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Admin from './layouts/Dashboard/Dashboard';
 import * as actions from './actions';
 import { connect } from 'react-redux';
+import Navs from './components/Navs/Navs';
 
 //Pages
 import Home from './views/Home/Home';
-
 import About from './views/About/About';
 import Category from './views/Category/Category';
 
@@ -36,18 +36,13 @@ class App extends Component {
             <div>
 
                 <Router>
-                    <div>
-                        {/* <Navs user={this.props.user} /> */}
+                    <div>    
                         {/* <Navbar1 user={this.props.user} /> */}
-
                         <Route path="/" exact component={Home} />
-                         
                         <Route path="/category/:category" component={Category} />
-
-                       
+                        
                         <Route path="/About" component={About} />
                         <Route path="/viewstory/:filter" component={ViewStory} />
-
                         <AdminRoute path="/admin" component={Admin} />
                         <Footers user={this.props.user} />
                     </div>
