@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES  } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -29,4 +29,13 @@ export const fetchArticle = (id) => async dispatch => {
     const data = await res.json();
  console.log('ID',data)
     dispatch({ type: FETCH_ARTICLE, payload: data });
+};
+
+//delete article using id
+export const _deleteArticle = (id) => async dispatch => {
+    const res = await fetch('/api/articles/' + id, {
+        method: "DELETE"
+    });
+    const data = await res.json();
+    dispatch({ type: GET_RES, payload: data })
 };
