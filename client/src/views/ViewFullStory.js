@@ -18,10 +18,10 @@ class ViewStory extends React.Component {
         const { article } = this.props;
         return (
             <Container>
-
                 <Row>
                     <Col xs="9">
-                        {article ? <Row>
+                        {article ?
+                         <Row>
                             <Card>
                                 <CardText><h2>{article.title}</h2></CardText>
                                 <CardImg top src={article.picture} alt="image" />
@@ -30,9 +30,8 @@ class ViewStory extends React.Component {
                                         <Col><span className="float-right"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
                                     </Row>
                                 </div>
-
-                                <CardBody> 
-                                  {renderHTML(article.body)}
+                                <CardBody>
+                                    {renderHTML(article.body)}
                                 </CardBody>
                             </Card>
 
@@ -45,8 +44,9 @@ class ViewStory extends React.Component {
                         </Row>
                     </Col>
                     <Col xs="3">
-                        <AdCorner />
-                        <div class="fb-page" data-href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs">Soweto Observer</a></blockquote></div>
+                     <AdCorner />
+                     <div class="fb-page" data-href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs">Soweto Observer</a></blockquote></div>
+                     <AdCorner />
                     </Col>
                 </Row>
             </Container>

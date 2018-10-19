@@ -25,13 +25,13 @@ class Home extends Component {
         <Container className="Container">
           <Row>
             <Col md='9'>
-              <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Breaking News</h3>
+              <h3 style={{fontSize: '35px', fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Breaking News</h3>
               <TopHead />
               <hr />
               <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Top Stories</h3>
               {this.props.articles ?
                 <Row>
-                  {
+                  {(this.props.articles && this.props.articles.length > 0) &&
                     this.props.articles.map((a, i) => {
                       return (
                         <div  >
