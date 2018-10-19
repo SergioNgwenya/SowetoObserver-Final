@@ -37,8 +37,7 @@ class Articles extends React.Component {
   }
   //Handling the action buttons 
   onHandleEdit(id) {
-    // alert("Edit record " + id);
-    this.setState({ isOpen: true })
+    alert("Edit record " + id);
   }
   onHandleDelete(id) {
     alert("Delete record number " + id);

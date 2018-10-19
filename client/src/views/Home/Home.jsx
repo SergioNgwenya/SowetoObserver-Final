@@ -29,6 +29,7 @@ class Home extends Component {
             <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Breaking News</h3>
             <TopHead/>
             <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Top Stories</h3>
+
             {(this.props.articles && this.props.articles.length > 0) &&
              <div className="row">
              {this.props.articles ? <div>
@@ -36,6 +37,7 @@ class Home extends Component {
                       this.props.articles.map((a, i) => {
                         return (
                           <Link to={"/viewstory/" + a._id}><BigNews news={a} /></Link>
+                          
                         )
                       })
                     }
