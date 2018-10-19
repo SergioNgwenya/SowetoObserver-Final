@@ -8,13 +8,13 @@ export default class BigNews extends Component {
                 background: news.picture ? `url(${news.picture})` : 'red',
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
-                height: 400,
-                width: 400,
+                height: 200,
+                width: 250,
                 margin: 10
             }}>
                 <div style={{
                     height: "inherit",
-                    width: "inherut",
+                    width: "inherit",
                     background: "rgba(0,0,0,0.4)",
                     display: "flex",
                     alignItems: "center"

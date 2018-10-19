@@ -2,11 +2,12 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-
 class About extends React.Component {
   render() {
     return (
+    
       <div className="AboutPage" >
+        
         <Container style={{ textAlign: 'center', fontFamily: 'Nova Flat'}}>
 
           <h2 className="Header">About Soweto Observer</h2>

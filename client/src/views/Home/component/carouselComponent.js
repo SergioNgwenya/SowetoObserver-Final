@@ -72,7 +72,7 @@ class TopHead extends Component {
           onExited={this.onExited}
           key={article.src}
         >
-          <img src={article.picture} alt={article.title} style={{height: 350, width: 800}} />
+          <img src={article.picture} alt={article.title} style={{height: 380, width: 830}} />
           <CarouselCaption captionHeader={article.title} />
         </CarouselItem>
       );

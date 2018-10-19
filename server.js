@@ -37,11 +37,15 @@ app.use(passport.session());
 require('./routes/auth.route')(app);
 var categoryRoutes = require('./routes/category.routes');
 var articleRoutes = require('./routes/articles.routes');
+var advertRoutes = require('./routes/advert.routes')
+var videoRoutes = require('./routes/video.routes');
 
 //Using the endpoint results.
 // app.use(userRoutes);
 app.use(categoryRoutes);
 app.use(articleRoutes);
+app.use(advertRoutes);
+app.use(videoRoutes);
 
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
