@@ -19,14 +19,7 @@ class ViewStory extends React.Component {
         const { article } = this.props;
         return (
             <Container>
-                <Row>
-                    <Col md={9}>
-                    </Col>
-                    <Col md={3}>
-                    </Col>
-                </Row>
 
-                <hr />
                 <Row>
                     <Col xs="9">
                         {article ? <Row>

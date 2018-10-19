@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 //Loading spinner
 //IMporting all icons from fontAwesome
 import * as FontAwesome from 'react-icons/lib/fa';
-import AddCategory from './addAdverts';
+import AddAdvert from './AddAdvert';
 
 //style for icons
 const styleIcons = {
@@ -27,13 +27,13 @@ const styleIcons = {
   },
 }
 
-class Adverts extends React.Component {
+class Advert extends React.Component {
   constructor() {
     super();
     this.state = {
       data: [],
-      name: false,
-      description: false,
+      title: false,
+      url: false,
       isOpen: false,
       add: false
     }
@@ -56,7 +56,7 @@ class Adverts extends React.Component {
   }
 
   render() {
-    const { category } = this.props;
+    const { Advert } = this.props;
     const columns = [{
       Header: '#',
       id: "row",
@@ -66,15 +66,15 @@ class Adverts extends React.Component {
         return <div>{row.index + 1}</div>
       }
     }, {
-      Header: "Name",
-      accessor: "name",
+      Header: "title",
+      accessor: "title",
       maxWidth: 200,
     }, {
-      Header: "Description",
-      accessor: "description",
+      Header: "URL",
+      accessor: "url",
     }, {
-      Header: 'Date posted',
-      accessor: "createdAt",
+      Header: 'picture',
+      accessor: "picture",
       maxWidth: 300,
     }, {
       Header: 'Action',
@@ -91,7 +91,7 @@ class Adverts extends React.Component {
       <div>
         <PanelHeader size="sm" />
         <div className="content">
-          <AddCategory open={this.state.add} close={this.toggleAdd} />
+          <AddAdvert open={this.state.add} close={this.toggleAdd} />
           <Row>
             <Col xs={12}>
               <Card>
@@ -108,7 +108,7 @@ class Adverts extends React.Component {
                   <ReactTable
                     defaultPageSize={5}
                     className="-striped -highlight"
-                    data={category}
+                    data={Advert}
                     columns={columns}
                   />
                 </CardBody>
@@ -124,7 +124,7 @@ class Adverts extends React.Component {
 }
 function matchDatesToProps(state) {
   return {
-    category: state.category
+    Advert: state.Advert
   }
 }
-export default connect(matchDatesToProps, actions)(Adverts);
+export default connect(matchDatesToProps, actions)(Advert);

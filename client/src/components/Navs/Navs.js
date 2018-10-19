@@ -66,7 +66,7 @@ export default class Navs extends React.Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   
-                  <DropdownItem href="/auth/logout">
+                  <DropdownItem classNme="nav-link" href="/auth/logout">
                     Logout
                   </DropdownItem>
                 </DropdownMenu>

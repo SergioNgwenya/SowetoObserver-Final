@@ -15,8 +15,8 @@ class Forms extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
-            description: "",
+            title: "",
+            url: "",
         }
         //binding
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,11 +25,12 @@ class Forms extends React.Component {
     async handleSubmit(e) {
         e.preventDefault();
         let obj = {
-            "name": this.state.name,
-            "description": this.state.description,
+            "title": this.state.title,
+            "url": this.state.url,
+            "picture": this.state.picture,
         }
         try {
-            let response = await fetch('http://localhost:8080/api/category', {
+            let response = await fetch('http://localhost:8080/api/Advert', {
                 method: 'POST',
                 credentials: "include",
                 headers: {
@@ -39,7 +40,7 @@ class Forms extends React.Component {
                 body: JSON.stringify(obj)
             });
             await response.json();
-            this.props.fetchCategory();
+            this.props.fetchAdvert();
             this.props.close();
 
         } catch (error) {
@@ -57,12 +58,12 @@ class Forms extends React.Component {
                     <Form onSubmit={this.handleSubmit}>
                         <FormGroup>
                             <Label>Title</Label>
-                            <Input style={{border: 'none', borderBottom: "1px solid #E3E3E3", borderRadius: 0}} placeholder="Enter advertisement title" onChange={(e) => { this.setState({ name: e.target.value }) }} required />
+                            <Input style={{border: 'none', borderBottom: "1px solid #E3E3E3", borderRadius: 0}} placeholder="Enter advertisement title" onChange={(e) => { this.setState({ title: e.target.value }) }} required />
                         </FormGroup>
 
                         <FormGroup>
-                            <Label>Description</Label>
-                            <Input type="textarea" onChange={(e) => { this.setState({ description: e.target.value }) }} placeholder="Enter URL " required />
+                            <Label>url</Label>
+                            <Input type="textarea" onChange={(e) => { this.setState({ url: e.target.value }) }} placeholder="Enter advert URL " required />
                         </FormGroup>
                         <FormGroup>
                             <Label>Media</Label>
@@ -88,7 +89,7 @@ class Forms extends React.Component {
 //export default Forms;
 function matchDatesToProps(state) {
     return {
-        category: state.category
+        Advert: state.Advert
     }
 }
 export default connect(matchDatesToProps, actions)(Forms);

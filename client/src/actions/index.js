@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE, FETCH_ADVERT } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -29,4 +29,15 @@ export const fetchArticle = (id) => async dispatch => {
     const data = await res.json();
  console.log('ID',data)
     dispatch({ type: FETCH_ARTICLE, payload: data });
+};
+
+export const fetchAdvert = () => async dispatch => {
+    try {
+        const res = await fetch('/api/advert');
+        const data = await res.json();
+        //console.log("category", data);
+        dispatch({ type: FETCH_ADVERT, payload: data });
+    } catch (err) {
+        console.error(err)
+    }
 };

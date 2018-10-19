@@ -5,9 +5,10 @@ const articleSchema = new Schema({
     title: { type: String },
     picture: { type: String },
     body: { type: String },
-    status: { type: String, default: "draft", enum: ["published", "draft", "expired"] },
+    // status: { type: String, default: "draft", enum: ["published", "draft", "expired"] },
     author: {type: String},
-    category: {type: Schema.Types.ObjectId, ref: 'Category'},
+    // category: {type: Schema.Types.ObjectId, ref: 'Category'},
+    category: {type: String},
 }, { timestamps: { createdAt: 'createdAt' } });
 
 module.exports = mongoose.model('Article', articleSchema);//Exporting the model to be available to routes

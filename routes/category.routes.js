@@ -40,7 +40,7 @@ router.get('/api/category/:id', function(req, res){
 router.delete('/api/category/:id', function(req, res){
     Category.findByIdAndRemove({_id:req.params.id}, function(err,foundCategory){
         if(err) return next(err);
-            res.json(foundCategory);
+            res.json({res: "Category deleted"});
         if (!foundCategory){
             return res.json({message: "No record found"})
         }
