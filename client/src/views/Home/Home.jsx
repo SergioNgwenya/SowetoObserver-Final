@@ -9,6 +9,7 @@ import Headlines from '../../components/Headline/Headlines';
 import Navs from '../../components/Navs/Navs';
 import { connect } from 'react-redux';
 import BigNews from "../../components/NewsComp/BigNews";
+import SmallNews from '../../components/NewsComp/SmallNews';
 import { Link } from 'react-router-dom';
 
 

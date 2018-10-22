@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class About extends React.Component {
   render() {
     return (
-    
+      
       <div className="AboutPage" >
         <Container style={{ textAlign: 'center', fontFamily: 'Nova Flat', paddingTop: 85}}>
         <Row>

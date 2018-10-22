@@ -1,8 +1,10 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES  } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,FETCH_VIDEO } from './types';
 import { _fetchArticles } from './article';
+import { _fetchVideos } from './video';
 
 
 export const fetchArticles = _fetchArticles;
+export const fetchVideos = _fetchVideos;
 
 
 export const fetchUser = () => async dispatch => {
@@ -16,7 +18,7 @@ export const fetchCategory = () => async dispatch => {
     try {
         const res = await fetch('/api/category');
         const data = await res.json();
-        //console.log("category", data);
+        console.log('Category',data)
         dispatch({ type: FETCH_CATEGORY, payload: data });
     } catch (err) {
         console.error(err)
@@ -31,11 +33,10 @@ export const fetchArticle = (id) => async dispatch => {
     dispatch({ type: FETCH_ARTICLE, payload: data });
 };
 
-//delete article using id
-export const _deleteArticle = (id) => async dispatch => {
-    const res = await fetch('/api/articles/' + id, {
-        method: "DELETE"
-    });
+export const fetchVideo = (id) => async dispatch => {
+   
+    const res = await fetch('/api/videos/'+ id );
     const data = await res.json();
-    dispatch({ type: GET_RES, payload: data })
+ console.log('ID',data)
+    dispatch({ type: FETCH_VIDEO, payload: data });
 };

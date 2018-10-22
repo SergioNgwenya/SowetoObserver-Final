@@ -23,6 +23,7 @@ export default class BigNews extends Component {
                     <h2 className="text-white display-4" style={{fontSize: '1.3em',padding: 10}}>{news.title}</h2>
                 </div>
             </div>
+            
         )
     }
 }

@@ -7,6 +7,7 @@ import AdCorner from './Home/component/adComponent';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import loading from '../../src/images/loader.gif';
+import ButtonExampleInverted from '../components/button/buttonBack';
 import Moment from 'react-moment';
 //import Navs from '../components/Navs/Navs'//
 //import * as FontAwesome from 'react-icons/lib/fa'
