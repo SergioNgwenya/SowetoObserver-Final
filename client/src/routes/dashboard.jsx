@@ -11,7 +11,7 @@ var dashRoutes = [
     { path: "/admin/category", name: "Manage Category", icon: "design_bullet-list-67", exact: false,  component: Category },
   //  { path: "/admin/advert", name: "Manage ads", icon: "files_single-copy-04", exact: false, component: advertisements },
     { path: "/admin/videos", name: "Videos", icon: "media-1_button-play",exact: false, component: Videos },
-    { path: "/admin/advert", name: "Advert", icon: "files_single-copy-04",exact: false, component: Advert }
+    { path: "/admin/Advert", name: "Advert", icon: "files_single-copy-04",exact: false, component: Advert }
     // { redirect: true, path: "/admin/", pathTo: "/admin/",  name: "Dashboard" }
 ];
 export default dashRoutes;

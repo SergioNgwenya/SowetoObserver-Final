@@ -30,7 +30,7 @@ class Forms extends React.Component {
             "picture": this.state.picture,
         }
         try {
-            let response = await fetch('http://localhost:8080/api/Advert', {
+            let response = await fetch('http://localhost:8080/api/advert', {
                 method: 'POST',
                 credentials: "include",
                 headers: {
