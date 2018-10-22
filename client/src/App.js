@@ -26,7 +26,6 @@ class App extends Component {
     }
 
     render() {
-        console.log("articles", this.props.article)
         const AdminRoute = ({ component: Component, ...rest }) => (
             <Route {...rest} render={(props) => (
                 (this.props.user.role === "admin")
