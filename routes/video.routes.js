@@ -29,7 +29,6 @@ router.post('/api/video', multer.single("video"), (req, res)=>{
     var Video = new video();
     let new_video = new video({
         title:req.body.title,
-        category:req.body.category,
         video:req.file.location,
     });
         new_video.save(err=>{
@@ -85,9 +84,6 @@ router.put('/api/video/:id', multer.single("video"), function(req,res,next){
 
         if(req.body.title){
             foundvideo.title = req.body.title;
-        }
-        if(req.body.category){
-            foundvideo.category = req.body.category;
         }
         if(req.file.location){
             foundvideo.video = req.file.location;
