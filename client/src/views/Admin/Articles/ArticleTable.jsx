@@ -9,10 +9,39 @@ import { PanelHeader } from '../../../components';
 import * as actions from '../../../actions';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import MDSpinner from "react-md-spinner";
 //IMporting all icons from fontAwesome
 import * as FontAwesome from 'react-icons/lib/fa';
 import AddArticle from './AddArticle';
 
+const style = {
+  paddingLeft: "50%",
+}
+const styleButton = {
+  button: {
+  borderColor: "#0ad14c",
+  backgroundColor: "#ffffff",
+  color: "#0ad14c",
+  cursor: "pointer",
+  borderWidth: ".9px",
+  borderRadius: "30px",
+  padding: "7px 25px",
+  margin: "8px"
+  },
+}
+
+const clearButton = {
+  button: {
+  borderColor: "#f96233",
+  backgroundColor: "#ffffff",
+  color: "#f96233",
+  cursor: "pointer",
+  borderWidth: ".9px",
+  borderRadius: "30px",
+  padding: "7px 25px",
+  margin: "8px"
+  },
+}
 class Articles extends React.Component {
   constructor() {
     super();
@@ -30,18 +59,37 @@ class Articles extends React.Component {
   }
   //Components
   componentDidMount() {
+   
+  }
+
+  fetchArticle(id){
+this.props.fetchArticle(id); 
+
+
+
   }
 
   toggleAdd() {
     this.setState({ add: !this.state.add });
   }
   //Handling the action buttons 
-  onHandleEdit(id) {
-    alert("Edit record " + id);
+  onHandleEdit() {
+    // alert("Edit record " + id);
+    this.setState({ isOpen: true })
   }
   onHandleDelete(id) {
-    alert("Delete record number " + id);
+    this.props.fetchArticle(id);//Query to the redux fetcing object data for single id
+    this.setState({ confirm: true });
+    
   }
+  onDelete() {
+    
+    this.props._deleteArticle(this.props.article._id)
+    this.setState({ confirm: !this.state.confirm }) 
+    
+    this.props.fetchArticles();
+   
+}
 
   closeModal() {
     this.setState({
@@ -51,7 +99,6 @@ class Articles extends React.Component {
 
   render() {
     const { articles } = this.props;
-    console.log(articles)
     const columns = [{
       Header: "#",
       id: "row",
@@ -71,9 +118,6 @@ class Articles extends React.Component {
         </div>
       },
       //id: "picture"
-    }, {
-      Header: 'Category',
-      Cell: row => (<div>{row.original.category.name}</div>)
     }, {
       Header: "Status",
       accessor: "status",
@@ -161,6 +205,27 @@ class Articles extends React.Component {
             <Button outline onClick={this.closeModal}>Cancel</Button>
           </ModalFooter>
         </Modal>
+       
+        {/* Modal used to confirm delete */}
+        <Modal isOpen={this.state.confirm} toggle={()=>{this.setState({ confirm: !this.state.confirm})}}>
+                  
+                  <ModalHeader>Delete confimartion</ModalHeader>
+                      <ModalBody>
+                          <p> Are you sure you want to delete <b>
+                              { this.props.article ? 
+                                  this.props.article.title : 
+                                    <div style={style}>
+                                      <MDSpinner size="50" />
+                                    </div>} 
+                                  </b> ? 
+                                </p>
+                      </ModalBody>
+
+                    <ModalFooter>
+                        <button style={styleButton.button} onClick={this.onDelete.bind(this)} >Yes</button>
+                        <button onClick={() => { this.setState({ confirm: !this.state.confirm }) }} style={clearButton.button} >No</button>
+                    </ModalFooter>
+            </Modal>
       </div>
     );
   }
@@ -168,7 +233,12 @@ class Articles extends React.Component {
 
 function matchDatesToProps(state) {
   return {
-    articles: state.articles
+    articles: state.articles,
+    article: state.article,
+    respond: state.articles.respond,
+   
+
+    
   }
 }
 export default connect(matchDatesToProps, actions)(Articles);

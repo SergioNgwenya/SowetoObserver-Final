@@ -18,7 +18,7 @@ export const fetchCategory = () => async dispatch => {
     try {
         const res = await fetch('/api/category');
         const data = await res.json();
-        //console.log("category", data);
+        console.log('Category',data)
         dispatch({ type: FETCH_CATEGORY, payload: data });
     } catch (err) {
         console.error(err)
