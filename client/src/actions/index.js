@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES  } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT  } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -16,7 +16,7 @@ export const fetchCategory = () => async dispatch => {
     try {
         const res = await fetch('/api/category');
         const data = await res.json();
-        //console.log("category", data);
+        console.log('Category',data)
         dispatch({ type: FETCH_CATEGORY, payload: data });
     } catch (err) {
         console.error(err)
@@ -38,4 +38,23 @@ export const _deleteArticle = (id) => async dispatch => {
     });
     const data = await res.json();
     dispatch({ type: GET_RES, payload: data })
+};
+
+//deleting Category using id
+export const _deleteCategory = (id) => async dispatch => {
+    const res = await fetch('/api/category/' + id, {
+        method: "DELETE"
+    });
+    const data = await res.json();
+    
+    dispatch({ type: GET_RES, payload: data })
+};
+
+//Getiing single category by id
+export const fetchCat= (id) => async dispatch => {
+   
+    const res = await fetch('/api/category/'+ id );
+    const data = await res.json();
+ 
+    dispatch({ type: FETCH_CAT, payload: data });
 };

@@ -5,3 +5,4 @@ export const FETCH_CATEGORY = 'fetch_category';
 
 //For Deleting
 export const GET_RES = 'GET_RES';
+export const FETCH_CAT = 'FETCH_CAT';
