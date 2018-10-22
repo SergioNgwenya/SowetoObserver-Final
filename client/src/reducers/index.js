@@ -4,11 +4,14 @@ import articlesReducers from "./articlesReducers";
 import categoryReducer from "./categoryReducer";
 import articleRed from './articleReducer';
 import advertReducer from './advertReducer';
+import catRed from './catReducer';
 
 export default combineReducers({
     auth: authReducer,
     articles: articlesReducers,
     category: categoryReducer,
     article: articleRed,
-    advert: advertReducer
+    advert: advertReducer,
+    cat:catRed
+
 });

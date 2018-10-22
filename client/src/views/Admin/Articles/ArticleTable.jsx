@@ -68,11 +68,12 @@ this.props.fetchArticle(id);
 
 
   }
+
   toggleAdd() {
     this.setState({ add: !this.state.add });
   }
   //Handling the action buttons 
-  onHandleEdit(id) {
+  onHandleEdit() {
     // alert("Edit record " + id);
     this.setState({ isOpen: true })
   }
@@ -87,7 +88,7 @@ this.props.fetchArticle(id);
     this.setState({ confirm: !this.state.confirm }) 
     
     this.props.fetchArticles();
-    console.log(this.props._deleteArticle);
+   
 }
 
   closeModal() {
@@ -235,7 +236,7 @@ function matchDatesToProps(state) {
     articles: state.articles,
     article: state.article,
     respond: state.articles.respond,
-    category: state.category
+   
 
     
   }
