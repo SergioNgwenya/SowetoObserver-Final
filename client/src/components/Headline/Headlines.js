@@ -5,18 +5,17 @@ import { Link } from 'react-router-dom';
 
 class Headlines extends React.Component {
   render() {
-    const {articles} = this.props;
+    const { articles } = this.props;
     return (
-      <ListGroup flush className="headlines" style={{height: 400,overflowY:'scroll'}}>
-      {articles?
-        articles.map((art, ind)=>{
-          return(
-            <Link to={"/viewstory/" + art._id}><ListGroupItem tag="a" href="#">{art.title} </ListGroupItem></Link>
-                   
-          )
-        })
-        :<div>loading</div>
-      }
+      <ListGroup flush className="headlines" style={{ height: 250, overflowY: 'scroll' }}>
+        {articles ?
+          articles.map((art, ind) => {
+            return (
+              <Link to={"/viewstory/" + art._id}><ListGroupItem tag="a" href="#">{art.title} </ListGroupItem></Link>
+            )
+          })
+          : <div>loading</div>
+        }
       </ListGroup>
     );
   }

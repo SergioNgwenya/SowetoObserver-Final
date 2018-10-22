@@ -12,7 +12,7 @@ import moment from 'moment';
 import MDSpinner from "react-md-spinner";
 //IMporting all icons from fontAwesome
 import * as FontAwesome from 'react-icons/lib/fa';
-import AddArticle from './AddArticle';
+import AddAdvert from './AddAdvert';
 
 const style = {
   paddingLeft: "50%",
@@ -42,18 +42,20 @@ const clearButton = {
   margin: "8px"
   },
 }
-class Articles extends React.Component {
+class Advert extends React.Component {
   constructor() {
     super();
     this.state = {
       data: [],
-      article: false,
+      advert: false,
       category: false,
       author: false,
       isOpen: false,
       add: false
       //data: makeData()
+     
     }
+    
     this.closeModal = this.closeModal.bind(this);
     this.toggleAdd = this.toggleAdd.bind(this);
   }
@@ -62,33 +64,33 @@ class Articles extends React.Component {
    
   }
 
-  fetchArticle(id){
-this.props.fetchArticle(id); 
+  fetchAdvert(id){
+this.props.fetchAdvert(id); 
+console.log(this.props.fetchAdvert);
 
 
 
   }
-
   toggleAdd() {
     this.setState({ add: !this.state.add });
   }
   //Handling the action buttons 
-  onHandleEdit() {
+  onHandleEdit(id) {
     // alert("Edit record " + id);
     this.setState({ isOpen: true })
   }
   onHandleDelete(id) {
-    this.props.fetchArticle(id);//Query to the redux fetcing object data for single id
+    this.props.fetchAdvert(id);//Query to the redux fetcing object data for single id
     this.setState({ confirm: true });
     
   }
   onDelete() {
     
-    this.props._deleteArticle(this.props.article._id)
+    this.props._deleteAdvert(this.props.advert._id)
     this.setState({ confirm: !this.state.confirm }) 
     
-    this.props.fetchArticles();
-   
+    this.props.fetchAdvert();
+    console.log(this.props._deleteAdvert);
 }
 
   closeModal() {
@@ -98,7 +100,8 @@ this.props.fetchArticle(id);
   }
 
   render() {
-    const { articles } = this.props;
+    const { advert } = this.props;
+    console.log(this.props);
     const columns = [{
       Header: "#",
       id: "row",
@@ -119,26 +122,21 @@ this.props.fetchArticle(id);
       },
       //id: "picture"
     }, {
-      Header: "Status",
-      accessor: "status",
-    },
-    {
-      Header: 'Date posted',
-      accessor: "createdAt",
+      Header: "URL",
+      accessor: "url",
     }, {
       Header: 'Action',
       maxWidth: 70,
       Cell: row => (
         <div>
           <span onClick={this.onHandleDelete.bind(this, row.original._id)}><FontAwesome.FaTrash /></span>
-          <span onClick={this.onHandleEdit.bind(this, row.original._id)}><FontAwesome.FaEdit /></span>
         </div>
       )
     }]
     return (
       <div>
         <PanelHeader size="sm" />
-        <AddArticle open={this.state.add} close={this.toggleAdd} />
+        <AddAdvert open={this.state.add} close={this.toggleAdd} />
         <div className="content">
           <Row>
             <Col xs={12}>
@@ -147,20 +145,16 @@ this.props.fetchArticle(id);
                   <Navbar color="dark" light expand="md">
                     <Nav navbar>
                       <NavItem>
-                        <NavLink onClick={this.toggleAdd}><i className="now-ui-icons ui-1_simple-add"></i> Article</NavLink>
+                        <NavLink onClick={this.toggleAdd}><i className="now-ui-icons ui-1_simple-add"></i> Advert</NavLink>
                       </NavItem>
                     </Nav>
                   </Navbar>
                 </CardHeader>
                 <CardBody>
-                  <ReactTable
+                <ReactTable
                     defaultPageSize={5}
                     className="-striped -highlight"
-                    data={articles}
-                    resolveData={data => data.map(row => {
-                      row.createdAt = moment(row.createdAt).format('MMM Do YYYY, h:mm a');
-                      return row;
-                    })}
+                    data={advert}
                     columns={columns}
                   />
                 </CardBody>
@@ -171,31 +165,22 @@ this.props.fetchArticle(id);
 
         {/* Modal starts here */}
         <Modal isOpen={this.state.isOpen} toggle={() => { this.setState({ isOpen: !this.state.isOpen }) }} size="lg">
-          <ModalHeader> Editing article information </ModalHeader>
+          <ModalHeader> Editing Advert information </ModalHeader>
           <ModalBody>
+            
+
             <FormGroup>
-              <Label for="select">Select Category</Label>
-              <Input type="select" onChange={(e) => { this.setState({ select: e.target.value }) }} name="select" id="select">
-                {this.props.category ? (
-                  this.props.category.map((data, index) => (
-                    <option key={index} value={data._id}>{data.name}</option>
-                  ))
-                ) : null}
-              </Input>
+              <Label for="advert">Advert</Label>
+              <Input type="text" onChange={(e) => { this.setState({ title: e.target.value }) }} name="advert" id="advert" />
             </FormGroup>
 
             <FormGroup>
-              <Label for="article">Article</Label>
-              <Input type="text" onChange={(e) => { this.setState({ title: e.target.value }) }} name="article" id="article" />
+              <Label for="url">URL</Label>
+              <Input type="textarea" onChange={(e) => { this.setState({ url: e.target.value }) }} name="textarea" id="textarea" />
             </FormGroup>
 
             <FormGroup>
-              <Label for="text">Text Area</Label>
-              <Input type="textarea" onChange={(e) => { this.setState({ body: e.target.value }) }} name="textarea" id="textarea" />
-            </FormGroup>
-
-            <FormGroup>
-              <Label for="File">File</Label>
+              <Label for="picture">Picture</Label>
               <Input type="file" onChange={(e) => { this.setState({ picture: e.target.value }) }} sm={2} name="file" id="File" />
             </FormGroup>
           </ModalBody>
@@ -212,8 +197,8 @@ this.props.fetchArticle(id);
                   <ModalHeader>Delete confimartion</ModalHeader>
                       <ModalBody>
                           <p> Are you sure you want to delete <b>
-                              { this.props.article ? 
-                                  this.props.article.title : 
+                              { this.props.advert ? 
+                                  this.props.advert.title : 
                                     <div style={style}>
                                       <MDSpinner size="50" />
                                     </div>} 
@@ -233,12 +218,9 @@ this.props.fetchArticle(id);
 
 function matchDatesToProps(state) {
   return {
-    articles: state.articles,
-    article: state.article,
-    respond: state.articles.respond,
-   
+    advert: state.Advert
 
     
   }
 }
-export default connect(matchDatesToProps, actions)(Articles);
+export default connect(matchDatesToProps, actions)(Advert);

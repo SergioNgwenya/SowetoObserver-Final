@@ -8,20 +8,22 @@ export default class BigNews extends Component {
                 background: news.picture ? `url(${news.picture})` : 'red',
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
-                height: 400,
-                width: 400,
-                margin: 10
+                height: 200,
+                width: 270,
+                margin: 5,
+                
             }}>
                 <div style={{
                     height: "inherit",
-                    width: "inherut",
+                    width: "inherit",
                     background: "rgba(0,0,0,0.4)",
                     display: "flex",
-                    alignItems: "center"
+                    alignItems: "flex-end"
                 }}>
-                    <h2 className="text-white display-4" style={{fontSize: '2.5em'}}>{news.title}</h2>
+                    <h2 className="text-white display-4" style={{fontSize: '1.3em',padding: 10}}>{news.title}</h2>
                 </div>
             </div>
+            
         )
     }
 }

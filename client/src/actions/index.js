@@ -1,8 +1,10 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,FETCH_VIDEO } from './types';
 import { _fetchArticles } from './article';
+import { _fetchVideos } from './video';
 
 
 export const fetchArticles = _fetchArticles;
+export const fetchVideos = _fetchVideos;
 
 
 export const fetchUser = () => async dispatch => {
@@ -16,7 +18,7 @@ export const fetchCategory = () => async dispatch => {
     try {
         const res = await fetch('/api/category');
         const data = await res.json();
-        //console.log("category", data);
+        console.log('Category',data)
         dispatch({ type: FETCH_CATEGORY, payload: data });
     } catch (err) {
         console.error(err)
@@ -29,4 +31,12 @@ export const fetchArticle = (id) => async dispatch => {
     const data = await res.json();
  console.log('ID',data)
     dispatch({ type: FETCH_ARTICLE, payload: data });
+};
+
+export const fetchVideo = (id) => async dispatch => {
+   
+    const res = await fetch('/api/videos/'+ id );
+    const data = await res.json();
+ console.log('ID',data)
+    dispatch({ type: FETCH_VIDEO, payload: data });
 };
