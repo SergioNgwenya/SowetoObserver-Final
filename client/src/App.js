@@ -10,6 +10,7 @@ import Home from './views/Home/Home';
 import About from './views/About/About';
 import Category from './views/Category/Category';
 import video from './views/Video/video';
+import videos from './views/Video/videos';
 
 // Components
 import Footers from './components/Footer/Footers';
@@ -43,12 +44,8 @@ class App extends Component {
                         <Route path="/category/:category" component={Category} />
                         
                         <Route path="/About" component={About} />
+                        <Route path="/videos" component={videos} />
                         <Route path="/viewstory/:filter" component={ViewStory} />
-<<<<<<< HEAD
-                        <Route path="/video" component={video} />
-
-=======
->>>>>>> 082db541a1b2665284a0360fc962387728a3e41b
                         <AdminRoute path="/admin" component={Admin} />
                         <Footers user={this.props.user} />
                     </div>

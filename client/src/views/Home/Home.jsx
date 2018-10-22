@@ -25,27 +25,6 @@ class Home extends Component {
         <Container className="Container">
           <Row>
             <Col md='9'>
-<<<<<<< HEAD
-            <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Breaking News</h3>
-            <TopHead/>
-            <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Top Stories</h3>
-
-            {(this.props.articles && this.props.articles.length > 0) &&
-             <div className="row">
-             {this.props.articles ? <div>
-                    {
-                      this.props.articles.map((a, i) => {
-                        return (
-                          <Link to={"/viewstory/" + a._id}><BigNews news={a} /></Link>
-                          
-                        )
-                      })
-                    }
-                  </div>
-                    :
-
-                   <div>loading</div>
-=======
               <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Breaking News</h3>
               <TopHead />
               <hr />
@@ -60,7 +39,6 @@ class Home extends Component {
                         </div>
                       )
                     })
->>>>>>> 082db541a1b2665284a0360fc962387728a3e41b
                   }
                 </Row>
                 : <div>loading</div>
