@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Admin from './layouts/Dashboard/Dashboard';
 import * as actions from './actions';
 import { connect } from 'react-redux';
-import Navs from './components/Navs/Navs';
+
 
 //Pages
 import Home from './views/Home/Home';
