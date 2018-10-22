@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
-import AdCorner from '../Home/adComponent';
+import AdCorner from '../Home/component/adComponent';
 import ReactPlayer from 'react-player';
 import { Container, Row, Col, CardImg } from 'reactstrap';
 import { Link} from 'react-router-dom';

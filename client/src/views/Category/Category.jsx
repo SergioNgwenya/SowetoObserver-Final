@@ -6,9 +6,9 @@ import Navs from '../../components/Navs/Navs';
 import { connect } from 'react-redux';
 import BigNews from "../../components/NewsComp/BigNews";
 import { Link } from 'react-router-dom';
-import { url} from 'react-url'
+import { url } from 'react-url'
 import { connectURL } from 'react-url';
-import Background from 'react';
+
 
 class Home extends Component {
   render() {
@@ -16,14 +16,16 @@ class Home extends Component {
     return (
       <div>
         <Navs user={this.props.user} />
-        <Jumbotron className="Jumbo" >
-          <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold'}}>{(this.props.match.params.category).toUpperCase()}</h3>
-        </Jumbotron>
+
         <Container className="CategoryContainer">
+
           <Row>
             <Col md='9'>
               {this.props.articles ?
                 <Row>
+                  <Jumbotron className="Jumbo" >
+                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{(this.props.match.params.category).toUpperCase()}</h3>
+                  </Jumbotron>
                   {(this.props.articles && this.props.articles.length > 0) &&
                     this.props.articles.map((a, i) => {
                       return (

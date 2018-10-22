@@ -21,14 +21,13 @@ class Home extends Component {
     console.log(this.props)
     return (
       <div>
-        <Navs user={this.props.user} />
         <Container className="Container">
           <Row>
             <Col md='9'>
-              <h3 style={{fontSize: '35px', fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Breaking News</h3>
+              {/* <h3 style={{fontSize: '30px',  fontWeight: 'bold', color: "#D32F2F"}}>BREAKING NEWS</h3> */}
               <TopHead />
               <hr />
-              <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>Top Stories</h3>
+              <h3 style={{fontSize: '30px', fontFamily: 'Nova Flat', fontWeight: 'bold', color: "#D50000" }}>TOP STORIES</h3>
               {this.props.articles ?
                 <Row>
                   {(this.props.articles && this.props.articles.length > 0) &&
@@ -44,7 +43,7 @@ class Home extends Component {
                 : <div>loading</div>
               }
               <hr />
-              <h3 style={{ fontFamily: 'Nova Flat', fontWeight: 'bold' }}>HEADLINES</h3>
+              <h3 style={{fontSize: '30px', fontFamily: 'Nova Flat', fontWeight: 'bold', color: "#D32F2F"}}>HEADLINES</h3>
               <Headlines />
             </Col>
             <Col md='3'>

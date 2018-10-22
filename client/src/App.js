@@ -9,6 +9,7 @@ import Navs from './components/Navs/Navs';
 import Home from './views/Home/Home';
 import About from './views/About/About';
 import Category from './views/Category/Category';
+import Video from './views/Video/video';
 
 // Components
 import Footers from './components/Footer/Footers';
@@ -37,11 +38,12 @@ class App extends Component {
 
                 <Router>
                     <div>    
-                        {/* <Navbar1 user={this.props.user} /> */}
+                        <Navs user={this.props.user} />
                         <Route path="/" exact component={Home} />
                         <Route path="/category/:category" component={Category} />
                         
                         <Route path="/About" component={About} />
+                        <Route path="/Video" component={Video} />
                         <Route path="/viewstory/:filter" component={ViewStory} />
                         <AdminRoute path="/admin" component={Admin} />
                         <Footers user={this.props.user} />
