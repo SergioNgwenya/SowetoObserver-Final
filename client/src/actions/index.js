@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT  } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT  } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -29,6 +29,15 @@ export const fetchArticle = (id) => async dispatch => {
     const data = await res.json();
  console.log('ID',data)
     dispatch({ type: FETCH_ARTICLE, payload: data });
+};
+
+
+export const fetchAdvert = (id) => async dispatch => {
+   
+    const res = await fetch('/api/advert/'+ id );
+    const data = await res.json();
+ console.log('ID',data)
+    dispatch({ type: FETCH_ADVERT, payload: data });
 };
 
 //delete article using id

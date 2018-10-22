@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Container } from 'reactstrap';
+import { Row, Col, Container, Jumbotron } from 'reactstrap';
 import AdCorner from '../../views/Home/component/adComponent';
 import FB_Int from '../../components/Intergration/FB_Int';
 import Navs from '../../components/Navs/Navs';
@@ -13,19 +13,25 @@ class Home extends Component {
 
   render() {
     console.log(this.props)
-    
+
     return (
       <div>
         <Navs user={this.props.user} />
         <Container className="Container">
-        
+
+
+          <div className="Jumbotron">
+            <Jumbotron style={{ textAlign: 'center', height: '60px', marginTop: "70px", paddingTop: "40px" }} >
+              <h3 className="lead">{(this.props.match.params.category).toUpperCase()}</h3>
+            </Jumbotron>
+          </div>
           <Row>
-          
+
             <Col md='9'>
-          
-            {(this.props.articles && this.props.articles.length > 0) &&
-             <div className="row">
-             {this.props.articles ? <div>
+  
+              {(this.props.articles && this.props.articles.length > 0) &&
+                <div className="row">
+                  {this.props.articles ? <div>
                     {
                       this.props.articles.map((a, i) => {
                         return (
@@ -36,12 +42,12 @@ class Home extends Component {
                   </div>
                     :
 
-                   <div>loading</div>
+                    <div>loading</div>
                   }
-             
-              {/* <BigNews news={this.props.articles[1]} /> */}
-              </div>}
-              
+
+                  {/* <BigNews news={this.props.articles[1]} /> */}
+                </div>}
+
             </Col>
 
             <Col md='3'>
@@ -57,8 +63,8 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({auth, articles}){
-  return{ user: auth, articles }
+function mapStateToProps({ auth, articles }) {
+  return { user: auth, articles }
 }
 
 export default connect(mapStateToProps)(Home);

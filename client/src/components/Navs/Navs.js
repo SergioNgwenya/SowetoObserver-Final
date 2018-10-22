@@ -33,7 +33,7 @@ export default class Navs extends React.Component {
                 <NavLink to="/" className="nav-link"><i className="fa fa-home"></i> Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/category/politcs" className="nav-link">Politcs</NavLink>
+                <NavLink to="/category/politics" className="nav-link">Politcs</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/category/entertainment" className="nav-link">Entertainment</NavLink>
