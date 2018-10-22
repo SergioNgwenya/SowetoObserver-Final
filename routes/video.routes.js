@@ -29,7 +29,7 @@ router.post('/api/video', multer.single("video"), (req, res)=>{
     var Video = new video();
     let new_video = new video({
         title:req.body.title,
-        category:req.body.title,
+        category:req.body.category,
         video:req.file.location,
     });
         new_video.save(err=>{
