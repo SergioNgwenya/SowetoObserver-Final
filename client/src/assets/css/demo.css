@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 @import url(http://fonts.googleapis.com/css?family=Gudea);
 
+
 /* footer */
 .footers{
     background-color: #424242;
@@ -13,28 +14,21 @@
     padding: 0.5rem 0.7rem;
     line-height: 1.625rem;
     /* margin-bottom:100px; */
-    
-
 }
 .copyright a {
     text-align: center;
     color: white;
-    
 }
 .footer .copyright {
     text-align: center;
     color: white;
  }
-
-   
     .footers{
-        margin-top: 120px;
-        
+        margin-top: 120px;   
     }
     .videos{
-    
-        margin: auto;
-        width: 100%;  
+     margin: auto;
+     width: 100%;  
         
         -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
 -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
@@ -158,59 +152,39 @@ padding-top:15px ;
      padding-bottom: 10px;
      padding-top: 10px;   
  }
- /* Entertainment */
  
- 
-
  .Container{
-    margin: auto;
-    width: 100%;
     -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
--moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
-padding-top:15px ;
-
-}
+    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+    padding-top: 90px;
+ }
 .videos{
-
     margin: auto;
     width: 100%;  
-    background-color:snow
     /* -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
     -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
     box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
     padding-top:15px ; */
+    padding-bottom: 100px;
+    padding-top: 100px;
 }
 .videos p{
     font-size: 15px;
 }
-
-/* Nav */
-
- .Navigation{
-     background-color: white;
-     color: #101010;
- }
-
-/* Community Service */
-
 .CM_image{
     padding-right: 15px;
     padding-left: 15px;
 }
-
 .CM_Card{
-    margin: 15px;
-    
+    margin: 15px;  
 }
-
 .CM_Media{
     border: solid black 1px;
 }
-
 .footer .copyright {
-    text-align: center; }
-
+    text-align: center; 
+}
 .top_stories{
     color: red;
     margin-left: 17px;
@@ -220,8 +194,6 @@ padding-top:15px ;
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
-
 #social:hover {
     -webkit-transform:scale(1.1); 
     -moz-transform:scale(1.1); 
@@ -267,9 +239,6 @@ padding-top:15px ;
         box-shadow: 5px 10px 8px;
     } */
     
-
-
-/* Cards */
 .Cards{
     margin-top: 1px;
     margin-left: 5px;
@@ -288,7 +257,6 @@ padding-top:15px ;
     padding-right: 15px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
 }
-
 .Media_body{
     padding-left: 15px;
     padding-top: 0px;
@@ -360,5 +328,38 @@ body::-webkit-scrollbar-thumb {
   }
 
   .adCard{
-      margin-top: 36px;
   }
+
+.Jumbo{
+    height: 170px;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 5px;
+    margin-right: 20px;
+    background-image: url('../../images//art1.jpg');
+    background-position: center;
+    background: rgba(0, 0, 0, 4)
+}
+
+.viewFullContainer{
+    padding-top: 80px;
+  
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+  
+}
+.AboutPage{
+    margin: auto;
+    width: 80%;
+}
+#clock{
+    padding-left: 10px;
+    float: left;
+}
+.CategoryContainer{
+   padding-top: 50px;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+}

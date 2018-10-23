@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Container, Row, Col } from 'reactstrap';
 import { Card, CardImg, CardText, CardBody } from 'reactstrap';
 import renderHTML from 'react-render-html';
@@ -8,7 +9,7 @@ import { connect } from 'react-redux';
 import loading from '../../src/images/loader.gif';
 import ButtonExampleInverted from '../components/button/buttonBack';
 import Moment from 'react-moment';
-// import Moment from 'react-moment';
+//import Navs from '../components/Navs/Navs'//
 //import * as FontAwesome from 'react-icons/lib/fa'
 class ViewStory extends React.Component {
     componentDidMount() {
@@ -18,38 +19,40 @@ class ViewStory extends React.Component {
     render() {
         const { article } = this.props;
         return (
-            <Container>
+            <div>
 
-                <Row>
-                    <Col xs="9">
-                        {article ? <Row>
-                            <Card>
-                                <CardImg top src={article.picture} alt="Card image cap" />
-                                <CardText><h2>{article.title}</h2></CardText>
-                                <div class="container">
+                <Container className="viewFullContainer" >
+                    <Row>
+                        <Col xs="9">
+                            {article ?
+                                <Row>
+                                    <CardText style={{ paddingLeft: 20, paddingTop: 10 }}><h2>{article.title}</h2></CardText>
                                     <Row>
-                                        <Col><span className="float-right"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
+                                        <Col md="10"><span id="clock"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
+                                        <Col md="1"></Col>
+                                        <Col md="1"></Col>
+                                      
                                     </Row>
 
-                                </div>
-                                <CardBody> {renderHTML(article.body)}
-                                <ButtonExampleInverted/>
-                                </CardBody>
+                                    <CardImg style={{ paddingLeft: 20, paddingRight: 20, height: 400 }} top src={article.picture} alt="image" />
 
-                            </Card>
+                                    <CardBody>
+                                        {renderHTML (article.body)}
+                                    </CardBody>
+                                </Row>
+                                :
+                                <img src={loading} alt="loading" style={{ paddingLeft: '50%', height: 80, width: 'auto' }} />
+                            }
 
-                        </Row>
-                            :
-                            <img src={loading} alt="loading" style={{ paddingLeft: '35%', height: 200, width: 'auto' }} />
-                        }
-                        
-                    </Col>
-                    <Col xs="3">
-                        <AdCorner />
-                        <div class="fb-page" data-href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs">Soweto Observer</a></blockquote></div>
-                    </Col>
-                </Row>
-            </Container>
+                        </Col>
+                        <Col xs="3">
+                            <AdCorner />
+                            <div class="fb-page" data-href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs">Soweto Observer</a></blockquote></div>
+                            <AdCorner />
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         );
     }
 }

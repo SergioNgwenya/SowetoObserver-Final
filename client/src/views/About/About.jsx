@@ -1,5 +1,7 @@
 import React from 'react';
-import { Container, Row, Col, Jumbotron } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+import AdCorner from '../Home/component/adComponent';
+import FB_Int from '../../components/Intergration/FB_Int';
 import { Link } from 'react-router-dom';
 
 class About extends React.Component {
@@ -7,20 +9,19 @@ class About extends React.Component {
     return (
       
       <div className="AboutPage" >
-        
-        <Container style={{ textAlign: 'center', fontFamily: 'Nova Flat'}}>
-        
-        
+        <Container style={{ textAlign: 'center', fontFamily: 'Nova Flat', paddingTop: 85}}>
+        <Row>
+            <Col md='9'>
           <h2 className="Header">About Soweto Observer</h2>
 
           <br />
           <h4 className="Header">- Background -</h4>
-          <p ><i>Soweto Observer is a local community newspaper that covers news in Soweto. The newspaper is 100% owned by The Genial Media Group. Its founders are young people from different walks of life. It Started its print publication in August 2017 which is running to date. </i></p>
+          <p ><i style={{fontSize: 18}}>Soweto Observer is a local community newspaper that covers news in Soweto. The newspaper is 100% owned by The Genial Media Group. Its founders are young people from different walks of life. It Started its print publication in August 2017 which is running to date. </i></p>
           <br />
 
           
           <h4 className="Header">- Mission and Vision -</h4>
-          <p><i>We aim to serve our community with news that are truthful, objective and fair. Soweto Observer is not affilated to any political party. We uphold high standards of journalism. We hope to reach out to the youth and the community as a whole.</i></p>
+          <p><i style={{fontSize: 18}}>We aim to serve our community with news that are truthful, objective and fair. Soweto Observer is not affilated to any political party. We uphold high standards of journalism. We hope to reach out to the youth and the community as a whole.</i></p>
           <br />
 
           <h4 className="Header">- Location -</h4>
@@ -30,15 +31,21 @@ class About extends React.Component {
        
           <br/>
           <h4 className="Header" >Contact Details</h4>
-          <i>081 7595 432</i>
+          <i >081 7595 432</i>
           <br/>
           <i>063 4515 871</i>
           <br/>
-          <i>Info@sowetoobserver.co.za</i>
+          <i style={{fontSize: 18}}>Info@sowetoobserver.co.za</i>
           <br/>
-          <i>Robert@sowetoobserver.co.za</i>
+          <i style={{fontSize: 18}}>Robert@sowetoobserver.co.za</i>
           <br/>
-
+          </Col>
+            <Col md='3'>
+              <AdCorner />
+              <FB_Int />
+              <AdCorner />
+            </Col>
+          </Row>
         </Container>
       </div>
     );
