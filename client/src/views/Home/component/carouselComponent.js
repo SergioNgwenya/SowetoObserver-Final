@@ -73,7 +73,7 @@ class TopHead extends Component {
         >
           <img src={article.picture} alt={article.title} style={{height: 350, width: 830}} />
           <CarouselCaption  captionHeader={article.title}  />
-        </CarouselItem>
+        </CarouselItem>  
       );
     });
 
