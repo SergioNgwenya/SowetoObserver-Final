@@ -6,8 +6,7 @@ import Navs from '../../components/Navs/Navs';
 import { connect } from 'react-redux';
 import BigNews from "../../components/NewsComp/BigNews";
 import { Link } from 'react-router-dom';
-import { url } from 'react-url'
-import { connectURL } from 'react-url';
+
 
 
 class Home extends Component {

@@ -60,9 +60,7 @@ class Advert extends React.Component {
     this.toggleAdd = this.toggleAdd.bind(this);
   }
   //Components
-  componentDidMount() {
-   
-  }
+ 
 
   fetchAdvert(id){
 this.props.fetchAdvert(id); 
@@ -100,7 +98,7 @@ console.log(this.props.fetchAdvert);
   }
 
   render() {
-    const { advert } = this.props;
+    const { adverts } = this.props;
     console.log(this.props);
     const columns = [{
       Header: "#",
@@ -154,8 +152,13 @@ console.log(this.props.fetchAdvert);
                 <ReactTable
                     defaultPageSize={5}
                     className="-striped -highlight"
-                    data={advert}
+                    data={adverts}
+                    resolveData={data => data.map(row => {
+                      row.createdAt = moment(row.createdAt).format('MMM Do YYYY, h:mm a');
+                      return row;
+                    })}
                     columns={columns}
+                    
                   />
                 </CardBody>
               </Card>
@@ -218,7 +221,8 @@ console.log(this.props.fetchAdvert);
 
 function matchDatesToProps(state) {
   return {
-    advert: state.Advert
+    advert: state.Adver,
+    adverts:state.adverts
 
     
   }

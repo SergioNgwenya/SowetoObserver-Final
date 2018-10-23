@@ -24,19 +24,21 @@ const multer = Multer({
 });
 const imgUpload = require('../utility/imgUpload');
 
+
+
 //Creating a POST endpoint
     router.post('/api/articles', multer.single("picture"), (req, res, next)=>{
         console.log(req.file)
             var article = new Article();
             let new_article = new Article({
+                
                 title:req.body.title,
                 body:req.body.body,
-                // status:req.body.status,
                 author:req.body.author,
                 category:req.body.category,
                 picture: req.file.location,
                 });
-
+                
                 new_article.category = [req.body.category];
 
                 new_article.save(err=>{
@@ -68,14 +70,21 @@ const imgUpload = require('../utility/imgUpload');
 //creating a GET articles endpoint to get/retrive all information from DB
 router.get('/api/articles', (req, res,next)=>{
     //Function to get all articles from a database that were created based on the UserSchema
-    
-    Article.find({}, function(err, foundArticle){
-        if(err) return next(err);
-        if(!foundArticle){
-            return rse.json({message:"No articles found!"})
-        }
-        res.json(foundArticle);
-    });
+    // Article.find({}, function(err, foundArticle){
+        
+    //     if(err) return next(err);
+    //     if(!foundArticle){
+    //         return rse.json({message:"No articles found!"})
+    //     }
+    //     res.json(foundArticle);
+    // });
+    Article.find()
+    .populate("category")
+    .exec((err, article)=>{
+        if(err){ return next(err)}
+        res.json(article)
+    }
+    )
     
     // Article.find()
     // .populate('category')
