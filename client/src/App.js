@@ -22,6 +22,7 @@ class App extends Component {
         this.props.fetchUser();
         this.props.fetchArticles();
         this.props.fetchCategory();
+        this.props.fetchVideos();
        
     }
 
@@ -58,6 +59,7 @@ function mapStateToProp(state) {
     return {
         user: state.auth,
         articles: state.articles,
+        video: state.video,
        
     }
 }
