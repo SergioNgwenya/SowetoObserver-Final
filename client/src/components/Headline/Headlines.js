@@ -7,7 +7,7 @@ class Headlines extends React.Component {
   render() {
     const { articles } = this.props;
     return (
-      <ListGroup flush className="headlines" style={{ height: 300, overflowY: 'scroll' }}>
+      <ListGroup flush className="headlines" style={{ height: 250, overflowY: 'scroll' }}>
         {articles ?
           articles.map((art, ind) => {
             return (

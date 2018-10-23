@@ -1,10 +1,10 @@
 import React from 'react';
-import {Collapse,Navbar,NavbarToggler, NavbarBrand,Nav,NavItem,UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
 
-export default class Navs extends React.Component {
+class Navs extends React.Component {
   constructor(props) {
     super(props);
 
@@ -20,15 +20,14 @@ export default class Navs extends React.Component {
   }
   render() {
     return (
-      <div >
-        <Navbar dark color="dark" expand="md" >
-          <NavbarBrand href="/">
-            <img src={logo} alt="Soweto Observer Logo" style={{height: 60, width: 'auto'}} />
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
       
+      <Navbar expand="md" style={{ height: 70, width: '100%', position: 'fixed', zIndex: 1050, backgroundColor: '#263238', marginBottom: 100 }} >
+        <NavbarBrand href="/">
+          <img src={logo} alt="Soweto Observer Logo" style={{ height: 50, width: 'auto' }} />
+        </NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
                 <NavLink to="/" className="nav-link"><i className="fa fa-home"></i> Home</NavLink>
               </NavItem>
@@ -43,7 +42,7 @@ export default class Navs extends React.Component {
                 <NavLink to="/category/life-style" className="nav-link">Life Style</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/Video" className="nav-link">Video</NavLink>
+                <NavLink to="/videos" className="nav-link">Video</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/category/Crime" className="nav-link">Crime</NavLink>
@@ -69,12 +68,14 @@ export default class Navs extends React.Component {
                   <DropdownItem classNme="nav-link" href="/auth/logout">
                     Logout
                   </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>}
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+              </DropdownMenu>
+            </UncontrolledDropdown>}
+          </Nav>
+        </Collapse>
+      </Navbar>
+      
     );
   }
 }
+
+export default Navs;
