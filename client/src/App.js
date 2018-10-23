@@ -61,6 +61,7 @@ function mapStateToProp(state) {
     return {
         user: state.auth,
         articles: state.articles,
+        video: state.video,
        
     }
 }
