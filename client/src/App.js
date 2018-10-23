@@ -23,6 +23,8 @@ class App extends Component {
         this.props.fetchArticles();
         this.props.fetchCategory();
         this.props.fetchAdverts();
+        this.props.fetchVideos();
+       
     }
 
     render() {

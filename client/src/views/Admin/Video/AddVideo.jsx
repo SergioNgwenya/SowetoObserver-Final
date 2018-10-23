@@ -19,8 +19,8 @@ class Forms extends React.Component {
         super(props);
         this.state = {
             title: "",
-            body: "",
-            category: false
+            video: "",
+            
         };
         //binding
         this.onHandleChange = this.onHandleChange.bind(this);
@@ -38,13 +38,11 @@ class Forms extends React.Component {
     async handleSubmit(e) {
         e.preventDefault();
         let formdata = new FormData();
-        formdata.append("category", this.state.select);
-        formdata.append("title", this.state.title);
-        formdata.append("body", this.state.body);
+         formdata.append("title", this.state.title);
         formdata.append("video", this.state.video);
 
         try {
-            let response = await fetch("/api/videos", {
+            let response = await fetch("/api/video", {
                 method: "POST",
                 credentials: "include",
                 body: formdata
@@ -175,7 +173,9 @@ Forms.formats = [
 //export default Forms;
 function matchDatesToProps(state) {
     return {
-        category: state.category
+        category: state.category,
+        video:state.video,
+        videos:state.videos
     };
 }
 export default connect(
