@@ -17,37 +17,42 @@ class Forms extends React.Component {
         this.state = {
             title: "",
             url: "",
-        }
+        };
         //binding
+        this.onHandleChange = this.onHandleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    //On handle login function
+//Fetching redux data
+    onHandleChange(e) {
+        this.setState({ body: e });
+        console.log(this.state.body);
+    }
+componentDidMount() {
+    }
     async handleSubmit(e) {
         e.preventDefault();
-        let obj = {
-            "title": this.state.title,
-            "url": this.state.url,
-            "picture": this.state.picture,
-        }
+        let formdata = new FormData();
+        
+        formdata.append("title", this.state.title);
+        formdata.append("url", this.state.url);
+        formdata.append("picture", this.state.picture);
+
         try {
-            let response = await fetch('http://localhost:8080/api/advert', {
-                method: 'POST',
+            let response = await fetch("/api/advert/", {
+                method: "POST",
                 credentials: "include",
-                headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(obj)
+                body: formdata
             });
             await response.json();
-            this.props.fetchAdvert();
+            this.props.fetchAdverts();
             this.props.close();
-
         } catch (error) {
             console.log(error);
         }
 
+
     }
+
 
     render() {
         return (
@@ -89,7 +94,10 @@ class Forms extends React.Component {
 //export default Forms;
 function matchDatesToProps(state) {
     return {
-        Advert: state.Advert
+        Advert: state.Advert,
+        category: state.category,
+       adverts:state.articles
+
     }
 }
 export default connect(matchDatesToProps, actions)(Forms);

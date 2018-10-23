@@ -75,7 +75,7 @@ class Articles extends React.Component{
         Name: 'Youth day 2018',
         Video: 'youth.mp4',
         Summary:'Video took on june 16 2018 , by the streets of soweto ',
-        Date: 'Jul 17th 2018', 
+        Date: 'Jul 17th 2019', 
       }]
 
       const columns = [{

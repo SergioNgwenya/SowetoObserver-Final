@@ -99,6 +99,8 @@ this.props.fetchArticle(id);
 
   render() {
     const { articles } = this.props;
+    
+    
     const columns = [{
       Header: "#",
       id: "row",
@@ -236,6 +238,7 @@ function matchDatesToProps(state) {
     articles: state.articles,
     article: state.article,
     respond: state.articles.respond,
+    adverts: state.adverts
    
 
     

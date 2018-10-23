@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT  } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS  } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -16,12 +16,28 @@ export const fetchCategory = () => async dispatch => {
     try {
         const res = await fetch('/api/category');
         const data = await res.json();
-        console.log('Category',data)
+        
         dispatch({ type: FETCH_CATEGORY, payload: data });
     } catch (err) {
         console.error(err)
     }
 };
+//Fetching all adverts
+export const fetchAdverts = () => async dispatch => {
+    try {
+        const res = await fetch('/api/advert');
+        const data = await res.json();
+        
+        dispatch({ type: FETCH_ADVERTS, payload: data });
+    } catch (err) {
+        console.error(err)
+    }
+};
+
+
+
+
+
 
 export const fetchArticle = (id) => async dispatch => {
    
@@ -30,6 +46,8 @@ export const fetchArticle = (id) => async dispatch => {
  console.log('ID',data)
     dispatch({ type: FETCH_ARTICLE, payload: data });
 };
+
+
 
 
 export const fetchAdvert = (id) => async dispatch => {
