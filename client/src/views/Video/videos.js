@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const video = (props) => {
   return (
+    <div style={{paddingTop: 90}}>
     <Container className="videos" >
       <Row>
         <Col md="12">
@@ -101,6 +102,7 @@ const video = (props) => {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 

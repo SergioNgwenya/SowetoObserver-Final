@@ -6,8 +6,7 @@ import Navs from '../../components/Navs/Navs';
 import { connect } from 'react-redux';
 import BigNews from "../../components/NewsComp/BigNews";
 import { Link } from 'react-router-dom';
-import { url } from 'react-url'
-import { connectURL } from 'react-url';
+
 
 
 class Home extends Component {
@@ -16,9 +15,8 @@ class Home extends Component {
     return (
       <div>
         <Navs user={this.props.user} />
-
+        <div style={{paddingTop: 90}}>
         <Container className="CategoryContainer">
-
           <Row>
             <Col md='9'>
               {this.props.articles ?
@@ -47,6 +45,7 @@ class Home extends Component {
             </Col>
           </Row>
         </Container>
+      </div>
       </div>
     )
   }

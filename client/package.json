@@ -15,6 +15,7 @@
     "bootstrap-social": "^5.1.1",
     "chart.js": "^2.7.2",
     "date-fns": "^1.29.0",
+    "express": "file:node_modules/express",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "jquery": "^3.3.1",
@@ -48,8 +49,12 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.83.0",
+<<<<<<< HEAD
+    "slick-carousel": "^1.8.1"
+=======
     "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"
+>>>>>>> 255767fed9d99c7cb3b7800191735476d22af632
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",

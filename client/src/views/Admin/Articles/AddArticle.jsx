@@ -26,6 +26,7 @@ class Forms extends React.Component {
         this.onHandleChange = this.onHandleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    
     //Handling the input data
     onHandleChange(e) {
         this.setState({ body: e });
@@ -60,6 +61,8 @@ class Forms extends React.Component {
     }
 
     render() {
+        const { category } = this.props;
+        console.log(category);
         return (
             <Modal isOpen={this.props.open} toggle={this.props.close}>
                 <ModalHeader>New Article</ModalHeader>
@@ -175,7 +178,9 @@ Forms.formats = [
 //export default Forms;
 function matchDatesToProps(state) {
     return {
-        category: state.category
+        category: state.category,
+        articles:state.articles,
+        adverts:state.adverts
     };
 }
 export default connect(

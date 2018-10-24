@@ -19,25 +19,25 @@ class ViewStory extends React.Component {
     render() {
         const { article } = this.props;
         return (
-            <div>
+            <div style={{ paddingTop: 90 }}>
 
                 <Container className="viewFullContainer" >
                     <Row>
                         <Col xs="9">
                             {article ?
                                 <Row>
+
                                     <CardText style={{ paddingLeft: 20, paddingTop: 10 }}><h2>{article.title}</h2></CardText>
-                                    <Row>
-                                        <Col md="10"><span id="clock"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
-                                        <Col md="1"></Col>
-                                        <Col md="1"></Col>
-                                      
-                                    </Row>
-
+                                    <br/>
+                                
                                     <CardImg style={{ paddingLeft: 20, paddingRight: 20, height: 400 }} top src={article.picture} alt="image" />
+                                    <Row>
+                                    
+                                        <Col><span style={{float: 'right'}} id="float-left"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
 
+                                    </Row>
                                     <CardBody>
-                                        {renderHTML (article.body)}
+                                        {renderHTML(article.body)}
                                     </CardBody>
                                 </Row>
                                 :

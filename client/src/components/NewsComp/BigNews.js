@@ -9,8 +9,11 @@ export default class BigNews extends Component {
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
                 height: 200,
-                width: 270,
-                margin: 5,
+                width: 266,
+                marginLeft: 15,
+                marginTop: 5,
+                marginBottom: 5,
+                marginRight: -5,
                 
             }}>
                 <div style={{

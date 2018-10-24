@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Admin from './layouts/Dashboard/Dashboard';
 import * as actions from './actions';
 import { connect } from 'react-redux';
-import Navs from './components/Navs/Navs';
+
 
 //Pages
 import Home from './views/Home/Home';
@@ -15,13 +15,15 @@ import videos from './views/Video/videos';
 // Components
 import Footers from './components/Footer/Footers';
 import ViewStory from './views/ViewFullStory';
-
+import Navs from './components/Navs/Navs';
 
 class App extends Component {
     componentDidMount() {
         this.props.fetchUser();
         this.props.fetchArticles();
         this.props.fetchCategory();
+        this.props.fetchAdverts();
+        this.props.fetchVideos();
        
     }
 
@@ -59,6 +61,7 @@ function mapStateToProp(state) {
     return {
         user: state.auth,
         articles: state.articles,
+        video: state.video,
        
     }
 }
