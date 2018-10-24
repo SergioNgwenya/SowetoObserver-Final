@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS  } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS,FETCH_VIDEO,FETCH_VIDEOS } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -84,4 +84,25 @@ export const fetchCat= (id) => async dispatch => {
     const data = await res.json();
  
     dispatch({ type: FETCH_CAT, payload: data });
+};
+
+//FETCHING VIDEO ACTIONS
+export const fetchVideo= (id) => async dispatch => {
+   
+    const res = await fetch('/api/video/'+ id );
+    const data = await res.json();
+ console.log('ID',data)
+    dispatch({ type: FETCH_VIDEO, payload: data });
+};
+
+//Fetching all videos
+export const fetchVideos = () => async dispatch => {
+    try {
+        const res = await fetch('/api/video/');
+        const data = await res.json();
+        
+        dispatch({ type: FETCH_VIDEOS, payload: data });
+    } catch (err) {
+        console.error(err)
+    }
 };

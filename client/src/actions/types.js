@@ -8,3 +8,7 @@ export const GET_RES = 'GET_RES';
 export const FETCH_CAT = 'FETCH_CAT';
 export const FETCH_ADVERTS = 'FETCH_ADVERTS';
 
+//For fetching video 
+export const FETCH_VIDEO = 'FETCH_VIDEO';
+export const FETCH_VIDEOS = 'FETCH_VIDEOS';
+
