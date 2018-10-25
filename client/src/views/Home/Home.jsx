@@ -19,7 +19,10 @@ const styles = {
 }
 class Home extends Component {
   render() {
-    console.log(this.props)
+    var mainArticles = [];
+    for (var i = 0;  i < 6; i++){
+      mainArticles.push(this.props.articles[i]);
+    }
     return (
       <div>
         <Container className="Container">
@@ -34,7 +37,7 @@ class Home extends Component {
                   {(this.props.articles && this.props.articles.length > 0) &&
                     this.props.articles.map((a) => {
                       return (
-                        <div  >
+                        <div key={i} >
                           <Link to={"/viewstory/" + a._id}><BigNews news={a} /></Link>
                         </div>
                       )
