@@ -221,7 +221,7 @@ console.log(this.props.fetchAdvert);
 
 function matchDatesToProps(state) {
   return {
-    advert: state.Adver,
+    advert: state.Advert,
     adverts:state.adverts
 
     
