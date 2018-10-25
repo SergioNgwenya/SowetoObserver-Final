@@ -24,8 +24,6 @@ const multer = Multer({
 });
 const imgUpload = require('../utility/imgUpload');
 
-
-
 //Creating a POST endpoint
     router.post('/api/articles', multer.single("picture"), (req, res, next)=>{
         console.log(req.file)
@@ -41,8 +39,8 @@ const imgUpload = require('../utility/imgUpload');
                 
                 new_article.category = [req.body.category];
 
-                new_article.save(err=>{
-                if(err){console.log(err)}
+                new_article.save((err, next)=>{
+                if(err){ return next(err)};
                 res.json({response:"New article created"})
     });
 });
@@ -80,6 +78,7 @@ router.get('/api/articles', (req, res,next)=>{
     // });
     Article.find()
     .populate("category")
+    .sort({createAt: -1})
     .exec((err, article)=>{
         if(err){ return next(err)}
         res.json(article)
@@ -100,6 +99,14 @@ router.get('/api/articles', (req, res,next)=>{
 //Request for getting a single article (GET single article)
 router.get('/api/articles/:id', function(req, res){
     Article.findOne({_id:req.params.id}, function(err,foundArticle){
+        if(err) return next(err);
+        res.json(foundArticle);
+    });
+});
+
+//Get all articles only for a specific category
+router.get('/api/articles/category/:id', function(req, res){
+    Article.find({category:req.params.id}, function(err, foundArticle){
         if(err) return next(err);
         res.json(foundArticle);
     });
