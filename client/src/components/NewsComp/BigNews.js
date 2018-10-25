@@ -10,7 +10,7 @@ export default class BigNews extends Component {
                 backgroundPosition: "center center",
                 height: 200,
                 width: 266,
-                marginLeft: 15,
+                marginLeft: 15,     
                 marginTop: 5,
                 marginBottom: 5,
                 marginRight: -5,

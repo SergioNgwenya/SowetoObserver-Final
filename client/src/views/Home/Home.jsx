@@ -19,7 +19,10 @@ const styles = {
 }
 class Home extends Component {
   render() {
-    console.log(this.props)
+    var mainArticles = [];
+    for (var i = 0;  i < 6; i++){
+      mainArticles.push(this.props.articles[i]);
+    }
     return (
       <div style={{paddingTop: 90}}>
         <Container className="Container">
@@ -31,10 +34,10 @@ class Home extends Component {
               <h3 style={{fontSize: '30px', fontFamily: 'Nova Flat', fontWeight: 'bold', color: "#D50000" }}>BREAKING NEWS</h3>
               {this.props.articles ?
                 <Row>
-                  {(this.props.articles && this.props.articles.length > 0) &&
-                    this.props.articles.map((a, i) => {
+                  {
+                   mainArticles.map((a, i) =>  {
                       return (
-                        <div  >
+                        <div key={i} >
                           <Link to={"/viewstory/" + a._id}><BigNews news={a} /></Link>
                         </div>
                       )

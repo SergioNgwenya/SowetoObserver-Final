@@ -22,8 +22,6 @@ class App extends Component {
         this.props.fetchUser();
         this.props.fetchArticles();
         this.props.fetchCategory();
-        this.props.fetchVideos();
-       
     }
 
     render() {
