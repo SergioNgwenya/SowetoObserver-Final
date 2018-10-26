@@ -5,6 +5,7 @@ import * as actions from './actions';
 import { connect } from 'react-redux';
 
 
+
 //Pages
 import Home from './views/Home/Home';
 import About from './views/About/About';

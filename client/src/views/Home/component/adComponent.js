@@ -2,25 +2,55 @@ import React, { Component } from 'react';
 import {
     Card, CardBody, CardImg, CardTitle, CardText, CardLink
 } from 'reactstrap';
-import {} from '../../../components';
+import { } from '../../../components';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 class AdCorner extends Component {
     constructor(props) {
         super(props);
     }
     render() {
+        const { adverts } = this.props;
+        console.log('advert', adverts)
+
         return (
+            <div className="adCard">
 
-            <div className = "adCard">
-                <h3 className="lead"></h3>
-                <a href="https://www.jetonline.co.za/" target="blank">
-                    <Card style={{height: '400', width: '100%'}}>
-                        <CardImg  src="https://www.jetonline.co.za/media/wysiwyg/Low_res_Cover_OctNov_Trevor_Noah2.jpg" alt="Ads" />
-                    </Card>
+                {adverts ? <div>
+                    {
 
-                </a>
+                        adverts.map((advert) => {
+                            return (
+                <Card style={{ height: '400', width: '100%' }}>
+              <CardImg src={advert.picture} alt="Ads" />
+                </Card>
+
+
+                            )
+                        })
+
+                    }
+
+                </div>
+
+
+
+                    :
+
+                    <div>loading.....</div>
+
+                }
+
             </div>
         );
     }
 }
-export default AdCorner;
+function mapStateToProps(state) {
+    return {
+
+
+        adverts: state.adverts
+    }
+}
+
+export default connect(mapStateToProps)(AdCorner);
