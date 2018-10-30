@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 class Home extends Component {
   render() {
-    console.log(this.props)
+    console.log(this.props.articles.category)
     return (
       <div>
         <Navs user={this.props.user} />
@@ -25,11 +25,13 @@ class Home extends Component {
                     <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{(this.props.match.params.category).toUpperCase()}</h3>
                   </Jumbotron>
                   {(this.props.articles && this.props.articles.length > 0) &&
-                    this.props.articles.map((a, i) => {
+                    this.props.articles.map((a, c) => {
                       return (
                         <div  >
                           <Link to={"/viewstory/" + a._id}><BigNews news={a} /></Link>
+                          
                         </div>
+                        
                       )
                     })
                   }
@@ -51,8 +53,8 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({ auth, articles }) {
-  return { user: auth, articles }
+function mapStateToProps({ auth, articles, category }) {
+  return { user: auth, articles, category }
 }
 
 export default connect(mapStateToProps)(Home);

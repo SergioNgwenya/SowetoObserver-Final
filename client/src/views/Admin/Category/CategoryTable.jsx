@@ -139,16 +139,16 @@ class Category extends React.Component {
       <div>
         <PanelHeader size="sm" />
         <div className="content">
-          <AddCategory open={this.state.add} close={this.toggleAdd} />
+         {/* // <AddCategory open={this.state.add} close={this.toggleAdd} /> */}
           <Row>
             <Col xs={12}>
               <Card>
                 <CardHeader>
                   <Navbar color="dark" light expand="md">
                     <Nav navbar>
-                      <NavItem>
+                      {/* <NavItem>
                         <NavLink onClick={this.toggleAdd}><i className="now-ui-icons ui-1_simple-add"></i> Category</NavLink>
-                      </NavItem>
+                      </NavItem> */}
                     </Nav>
                   </Navbar>
                 </CardHeader>
