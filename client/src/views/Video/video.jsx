@@ -101,18 +101,7 @@ const video = (props) => {
 
 
 
-            {/* <Card>
-              
-              <div>
-                
-               </div>
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-              </CardBody>
-              <img width="50%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" /> 
-            </Card>  */}
-
+           
            </div> 
         </Col>
         <Col md="3">

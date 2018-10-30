@@ -3,13 +3,12 @@ import { Row, Col, Container, Card, CardTitle, CardText, CardImg, CardImgOverlay
 import AdCorner from './component/adComponent';
 import TopHead from './component/carouselComponent';
 import FB_Int from '../../components/Intergration/FB_Int';
-import SingleCard from '../../components/Cards/SimpleCards';
-import MoreCards from '../../components/Cards/MoreCards';
+
 import Headlines from '../../components/Headline/Headlines';
-import Navs from '../../components/Navs/Navs';
+
 import { connect } from 'react-redux';
 import BigNews from "../../components/NewsComp/BigNews";
-import SmallNews from '../../components/NewsComp/SmallNews';
+
 import { Link } from 'react-router-dom';
 
 
@@ -24,7 +23,7 @@ class Home extends Component {
       mainArticles.push(this.props.articles[i]);
     }
     return (
-      <div>
+      <div style={{paddingTop: 100}}>
         <Container className="Container">
           <Row>
             <Col md='9'>
@@ -33,8 +32,8 @@ class Home extends Component {
               <hr />
               <h3 style={{fontSize: '30px', fontFamily: 'Nova Flat', fontWeight: 'bold', color: "#D50000" }}>TOP STORIES</h3>
               {this.props.articles ?
-                <Row>
-                  {(this.props.articles && this.props.articles.length > 0) &&
+                (<Row>
+                  { (this.props.articles && this.props.articles.length > 0) &&
                     this.props.articles.map((a) => {
                       return (
                         <div key={i} >
@@ -43,7 +42,7 @@ class Home extends Component {
                       )
                     })
                   }
-                </Row>
+                </Row>)
                 : <div>loading</div>
               }
               <hr />

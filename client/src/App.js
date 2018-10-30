@@ -36,14 +36,16 @@ class App extends Component {
                     : <Redirect to='/admin/' />
             )} />
         );
+        const { category} = this.props;
         return (
             <div>
 
                 <Router>
-                    <div>    
-                        <Navs user={this.props.user} />
+                     {category?
+                     <div>
+                        <Navs />
                         <Route path="/" exact component={Home} />
-                        <Route path="/category/:category" component={Category} />
+                        <Route path="/category" component={Category} />
                         
                         <Route path="/About" component={About} />
                         <Route path="/video" component={Video} />
@@ -51,7 +53,10 @@ class App extends Component {
                         <Route path="/viewstory/:filter" component={ViewStory} />
                         <AdminRoute path="/admin" component={Admin} />
                         <Footers user={this.props.user} />
-                    </div>
+                    </div> 
+                    :<div>heloo</div>
+                    }  
+
                 </Router>
             </div>
         )
@@ -63,6 +68,7 @@ function mapStateToProp(state) {
         user: state.auth,
         articles: state.articles,
         video: state.video,
+        category: state.category
        
     }
 }
