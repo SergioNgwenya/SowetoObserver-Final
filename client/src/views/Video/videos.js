@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Player } from 'video-react';
 import { connect } from 'react-redux';
+// import "../../../node_modules/video-react/dist/video-react.css";
 
+
+import  './App.css'
 
  class PlayerExample extends Component {
  
@@ -9,19 +12,20 @@ import { connect } from 'react-redux';
     const { videos } = this.props;
         console.log('VID', videos)
     return (
-      <div>
-      {videos ? <div>
+      <div className="container">
+
+      <div className="div">
+      {videos ? <div >
         {
 
 videos.map((advert) => {
                 return (
-                 
-      <Player height={10}>
+                  
+      <Player style={{height:10}}>
        <h1>Latest videos</h1>
       <source src={advert.video} />
         </Player>
                 
-
                 )
             })
 
@@ -29,18 +33,13 @@ videos.map((advert) => {
 
     </div>
 
-
-
         :
 
         <div>loading.....</div>
 
     }
+    </div>
 
-
-     
-
- 
       </div>
     );
   }

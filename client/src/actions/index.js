@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS,FETCH_VIDEO,FETCH_VIDEOS } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS,FETCH_VIDEO,FETCH_VIDEOS, FETCH_ARTICLES_BY_CATEGORY } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -47,6 +47,11 @@ export const fetchArticle = (id) => async dispatch => {
     dispatch({ type: FETCH_ARTICLE, payload: data });
 };
 
+export const fetchArticleByCat = (id) => async dispatch => {
+    const res = await fetch('/api/articles/category/'+ id );
+    const data = await res.json();
+    dispatch({ type: FETCH_ARTICLES_BY_CATEGORY, payload: data });
+};
 
 
 

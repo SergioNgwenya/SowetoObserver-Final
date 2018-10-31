@@ -1,7 +1,8 @@
 import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 import logo from '../../images/logo.png';
 
 class Navs extends React.Component {
@@ -18,7 +19,18 @@ class Navs extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  getId(id){
+    this.props.fetchArticleByCat(id);
+  }
   render() {
+    const {category, user} = this.props;
+    var mainCategories = [];
+    for (var i = 0;  i < 4; i++){
+      mainCategories.push(this.props.category[i]);
+    }
+
+    console.log("main",mainCategories)
     return (
       
       <Navbar expand="md" style={{ height: 70, width: '100%', position: 'fixed', zIndex: 1050, backgroundColor: '#263238', marginBottom: 100 }} >
@@ -31,31 +43,47 @@ class Navs extends React.Component {
             <NavItem>
                 <NavLink to="/" className="nav-link"><i className="fa fa-home"></i> Home</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink to="/category/politics" className="nav-link">Politcs</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/category/entertainment" className="nav-link">Entertainment</NavLink>
-              </NavItem>
              
-              <NavItem>
-                <NavLink to="/category/life-style" className="nav-link">Life Style</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/videos" className="nav-link">Video</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/category/Crime" className="nav-link">Crime</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/category/sport" className="nav-link">Sport</NavLink>
-              </NavItem>
+              {category?
+                mainCategories.map((cat, i)=>{
+                  return(
+                     <NavItem onClick={()=>{this.getId(cat._id)}}><NavLink key={i} to="/category"  className="nav-link">{cat.name}</NavLink></NavItem>
+                  )
+                })
+                :null
+              }
+           <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                 More Options
+                </DropdownToggle>
+                <DropdownMenu right>
+
+              <Link to="/category">          
+              {category?
+                category.map((cat, i)=>{
+                  return(
+                  // 
+                    <DropdownItem key={i} onClick={()=>{this.getId(cat._id)}}>
+                     {cat.name.toUpperCase()}
+                   </DropdownItem>
+                  //  
+                  )
+                })
+                :<div>loading</div>
+              }</Link>
+
+                </DropdownMenu>
+              </UncontrolledDropdown>
               <NavItem>
                 <NavLink to="/About" className="nav-link">About</NavLink>
               </NavItem>
-              {(this.props.user.role === "admin") &&<NavItem>
+              {user?(this.props.user.role === "admin") &&<NavItem>
                 <NavLink to="/admin" className="nav-link">Manage</NavLink>
-              </NavItem>}
+              </NavItem>
+              :null
+            }
+
+
               {!this.props.user && <NavItem>
                 <a href="/auth/google" className="nav-link">Login</a>
               </NavItem>}
@@ -78,4 +106,12 @@ class Navs extends React.Component {
   }
 }
 
-export default Navs;
+function mapStateToProp(state) {
+  return {
+      user: state.auth,
+      category: state.category
+     
+  }
+}
+
+export default connect(mapStateToProp, actions)(Navs);

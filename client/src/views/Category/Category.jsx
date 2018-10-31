@@ -4,14 +4,17 @@ import AdCorner from '../../views/Home/component/adComponent';
 import FB_Int from '../../components/Intergration/FB_Int';
 import Navs from '../../components/Navs/Navs';
 import { connect } from 'react-redux';
+import * as actions from '../../actions';
 import BigNews from "../../components/NewsComp/BigNews";
 import { Link } from 'react-router-dom';
 
 
 
 class Home extends Component {
+
+
   render() {
-    console.log(this.props.articles.category)
+    // console.log(this.props);
     return (
       <div>
         <Navs user={this.props.user} />
@@ -19,17 +22,18 @@ class Home extends Component {
         <Container className="CategoryContainer">
           <Row>
             <Col md='9'>
-              {this.props.articles ?
+              {this.props.articleCat ?
                 <Row>
                   <Jumbotron className="Jumbo" >
-                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{(this.props.match.params.category).toUpperCase()}</h3>
+                                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{(this.props.match.params.category)}</h3>
+                                    {/* <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3> */}
                   </Jumbotron>
-                  {(this.props.articles && this.props.articles.length > 0) &&
-                    this.props.articles.map((a, c) => {
+  
+                  {(this.props.articleCat && this.props.articleCat.length > 0) &&
+                    this.props.articleCat.map((a, i) => {
                       return (
                         <div  >
-                          <Link to={"/viewstory/" + a._id}><BigNews news={a} /></Link>
-                          
+                          <Link to={"/viewstory/" + a._id}><BigNews key={i} news={a} /></Link>
                         </div>
                         
                       )
@@ -53,11 +57,11 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({ auth, articles, category }) {
-  return { user: auth, articles, category }
+function mapStateToProps({  articleCat, articles }) {
+  return {   articleCat , articles }
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, actions)(Home);
 
 
 
