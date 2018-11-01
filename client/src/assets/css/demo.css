@@ -344,8 +344,10 @@ body::-webkit-scrollbar-thumb {
     top: 100px;
     padding: 20px;
     padding-top: 120px;
-    width: 300px;
+    width: 500px;
     resize: both;
+    font-size: 19px;
+   
     /* overflow: auto; */
 }
 

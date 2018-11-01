@@ -20,6 +20,7 @@ class Forms extends React.Component {
         this.state = {
             title: "",
             video: "",
+         
             
         };
         //binding
@@ -38,6 +39,7 @@ class Forms extends React.Component {
     async handleSubmit(e) {
         e.preventDefault();
         let formdata = new FormData();
+        
          formdata.append("title", this.state.title);
         formdata.append("video", this.state.video);
 
@@ -58,12 +60,13 @@ class Forms extends React.Component {
     }
 
     render() {
+        const { category } = this.props;
         return (
             <Modal isOpen={this.props.open} toggle={this.props.close}>
                 <ModalHeader>New Video</ModalHeader>
                 <ModalBody>
                     <Form onSubmit={this.handleSubmit}>
-                        {/* <FormGroup>
+                       {/* <FormGroup>
                             <Label>
                                 Select Category
                             </Label>
@@ -84,7 +87,7 @@ class Forms extends React.Component {
                                     ))
                                 }
                             </Input>
-                        </FormGroup> */}
+                        </FormGroup>  */}
 
                         <FormGroup>
                             <Label>

@@ -30,7 +30,11 @@ router.post('/api/video', multer.single("video"), (req, res)=>{
     let new_video = new video({
         title:req.body.title,
         video:req.file.location,
+      
     });
+
+
+
         new_video.save(err=>{
         if(err){console.log(err)}
         res.json({response:"Video created successfully"})
@@ -61,6 +65,12 @@ router.get('/api/video/:id', function(req, res){
     });
 });
 
+
+
+
+
+
+
 //Request for and deleting a video (GET single video)
 router.delete('/api/video/:id', function(req, res){
     video.findByIdAndRemove({_id:req.params.id}, function(err,foundvideo){
@@ -85,6 +95,7 @@ router.put('/api/video/:id', multer.single("video"), function(req,res,next){
         if(req.body.title){
             foundvideo.title = req.body.title;
         }
+       
         if(req.file.location){
             foundvideo.video = req.file.location;
         }

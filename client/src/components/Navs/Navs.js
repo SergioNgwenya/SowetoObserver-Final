@@ -77,6 +77,9 @@ class Navs extends React.Component {
               <NavItem>
                 <NavLink to="/About" className="nav-link">About</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink to="/video" className="nav-link">video</NavLink>
+              </NavItem>
               {user?(this.props.user.role === "admin") &&<NavItem>
                 <NavLink to="/admin" className="nav-link">Manage</NavLink>
               </NavItem>
