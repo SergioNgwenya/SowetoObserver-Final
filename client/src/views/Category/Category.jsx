@@ -25,8 +25,13 @@ class Home extends Component {
               {this.props.articleCat ?
                 <Row>
                   <Jumbotron className="Jumbo" >
+<<<<<<< HEAD
                                     
                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3>
+=======
+                                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{(this.props.match.params.category)}</h3>
+                                    {/* <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3> */}
+>>>>>>> 8d1504664339f92568a917158d024aa2fe977312
                   </Jumbotron>
   
                   {(this.props.articleCat && this.props.articleCat.length > 0) &&
@@ -35,6 +40,7 @@ class Home extends Component {
                         <div  >
                           <Link to={"/viewstory/" + a._id}><BigNews key={i} news={a} /></Link>
                         </div>
+                        
                       )
                     })
                   }
@@ -56,8 +62,8 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({  articleCat }) {
-  return {   articleCat}
+function mapStateToProps({  articleCat, articles }) {
+  return {   articleCat , articles }
 }
 
 export default connect(mapStateToProps, actions)(Home);

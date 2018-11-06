@@ -115,9 +115,9 @@ class Videos extends React.Component {
         return <div>
           <ReactPlayer
          url={row.original.video}
-           className='div'
-           width='auto'
-           height='20'
+           className='div '
+           width='10'
+           height='10'
            alt={"not suppoted"}
          />
           

@@ -25,4 +25,5 @@ export default combineReducers({
     video:videoReducer,
     videos:videosReducer,
     articleCat : articleCatRed
+    
 });
