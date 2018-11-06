@@ -10,9 +10,40 @@ import * as actions from '../../../actions';
 import { connect } from 'react-redux';
 import moment from 'moment';
 //IMporting all icons from fontAwesome
+import MDSpinner from "react-md-spinner";
 import * as FontAwesome from 'react-icons/lib/fa';
 import AddVideo from './AddVideo';
 import ReactPlayer from 'react-player';
+
+const style = {
+  paddingLeft: "50%",
+}
+
+const styleButton = {
+  button: {
+  borderColor: "#0ad14c",
+  backgroundColor: "#ffffff",
+  color: "#0ad14c",
+  cursor: "pointer",
+  borderWidth: ".9px",
+  borderRadius: "30px",
+  padding: "7px 25px",
+  margin: "8px"
+  },
+}
+
+const clearButton = {
+  button: {
+  borderColor: "#f96233",
+  backgroundColor: "#ffffff",
+  color: "#f96233",
+  cursor: "pointer",
+  borderWidth: ".9px",
+  borderRadius: "30px",
+  padding: "7px 25px",
+  margin: "8px"
+  },
+}
 
 class Videos extends React.Component {
   constructor() {
@@ -39,8 +70,21 @@ class Videos extends React.Component {
     alert("Edit record " + id);
   }
   onHandleDelete(id) {
-    alert("Delete record number " + id);
+    
+    this.props._deleteVideo(this.props.video._id)
+    this.setState({ confirm: !this.state.confirm }) 
+    
+    this.props.fetchVideos();
   }
+  onDelete() {
+    
+    this.props._deleteVideo(this.props.video._id)
+    this.setState({ confirm: !this.state.confirm }) 
+    
+    
+   
+}
+ 
 
   closeModal() {
     this.setState({
@@ -49,8 +93,11 @@ class Videos extends React.Component {
   }
  
   render() {
-    const { videos } = this.props;
-    console.log(videos)
+    const { videos,video } = this.props;
+    
+    
+    console.log('nkati4ume2',videos);
+    console.log('4ume2',video);
     const columns = [{
       Header: "#",
       id: "row",
@@ -68,9 +115,9 @@ class Videos extends React.Component {
         return <div>
           <ReactPlayer
          url={row.original.video}
-           className='react-player'
+           className='div'
            width='auto'
-           height='40'
+           height='20'
            alt={"not suppoted"}
          />
           
@@ -86,7 +133,7 @@ class Videos extends React.Component {
       maxWidth: 70,
       Cell: row => (
         <div>
-          <span onClick={this.onHandleDelete.bind(this, row.original._id)}><FontAwesome.FaTrash /></span>
+          <span onClick={this.onDelete.bind(this, row.original._id)}><FontAwesome.FaTrash /></span>
           <span onClick={this.onHandleEdit.bind(this, row.original._id)}><FontAwesome.FaEdit /></span>
         </div>
       )
@@ -161,6 +208,27 @@ class Videos extends React.Component {
             <Button outline onClick={this.closeModal}>Cancel</Button>
           </ModalFooter>
         </Modal>
+
+         {/* Modal used to confirm delete */}
+         <Modal isOpen={this.state.confirm} toggle={()=>{this.setState({ confirm: !this.state.confirm})}}>
+                  
+                  <ModalHeader>Delete confimartion</ModalHeader>
+                      <ModalBody>
+                          <p> Are you sure you want to delete <b>
+                              { this.props.video ? 
+                                  this.props.video.title : 
+                                    <div style={style}>
+                                      <MDSpinner size="50" />
+                                    </div>} 
+                                  </b> ? 
+                                </p>
+                      </ModalBody>
+
+                    <ModalFooter>
+                        <button style={styleButton.button} onClick={this.onDelete.bind(this)} >Yes</button>
+                        <button onClick={() => { this.setState({ confirm: !this.state.confirm }) }} style={clearButton.button} >No</button>
+                    </ModalFooter>
+            </Modal>
       </div>
     );
   }
@@ -170,7 +238,11 @@ function matchDatesToProps(state) {
   return {
     videos: state.videos,
     video: state.video,
-    category:state.category
+    category:state.category,
+    respond: state.videos.respond,
+    delVideo:state.delVideo
+    
+
   }
 }
 export default connect(matchDatesToProps, actions)(Videos);

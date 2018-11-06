@@ -1,4 +1,8 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS,FETCH_VIDEO,FETCH_VIDEOS, FETCH_ARTICLES_BY_CATEGORY } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,
+    GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS,
+    FETCH_VIDEO,FETCH_VIDEOS,
+    FETCH_ARTICLES_BY_CATEGORY,
+    DELETE_VIDEO } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -25,7 +29,7 @@ export const fetchCategory = () => async dispatch => {
 //Fetching all adverts
 export const fetchAdverts = () => async dispatch => {
     try {
-        const res = await fetch('/api/advert');
+        const res = await fetch('/api/advert/');
         const data = await res.json();
         
         dispatch({ type: FETCH_ADVERTS, payload: data });
@@ -33,10 +37,6 @@ export const fetchAdverts = () => async dispatch => {
         console.error(err)
     }
 };
-
-
-
-
 
 
 export const fetchArticle = (id) => async dispatch => {
@@ -66,6 +66,24 @@ export const fetchAdvert = (id) => async dispatch => {
 //delete article using id
 export const _deleteArticle = (id) => async dispatch => {
     const res = await fetch('/api/articles/' + id, {
+        method: "DELETE"
+    });
+    const data = await res.json();
+    dispatch({ type: GET_RES, payload: data })
+};
+
+//delete ads using id
+export const _deleteAdvert = (id) => async dispatch => {
+    const res = await fetch('/api/advert/' + id, {
+        method: "DELETE"
+    });
+    const data = await res.json();
+    dispatch({ type: GET_RES, payload: data })
+};
+
+//delete video using id
+export const _deleteVideo = (id) => async dispatch => {
+    const res = await fetch('/api/video/' + id, {
         method: "DELETE"
     });
     const data = await res.json();

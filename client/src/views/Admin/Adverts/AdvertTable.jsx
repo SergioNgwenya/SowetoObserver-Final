@@ -87,8 +87,8 @@ console.log(this.props.fetchAdvert);
     this.props._deleteAdvert(this.props.advert._id)
     this.setState({ confirm: !this.state.confirm }) 
     
-    this.props.fetchAdvert();
-    console.log(this.props._deleteAdvert);
+    this.props.fetchAdverts();
+    
 }
 
   closeModal() {
@@ -221,8 +221,9 @@ console.log(this.props.fetchAdvert);
 
 function matchDatesToProps(state) {
   return {
-    advert: state.Advert,
-    adverts:state.adverts
+    advert: state.advert,
+    adverts:state.adverts,
+    respond: state.adverts.respond,
 
     
   }

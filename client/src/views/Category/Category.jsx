@@ -25,8 +25,8 @@ class Home extends Component {
               {this.props.articleCat ?
                 <Row>
                   <Jumbotron className="Jumbo" >
-                                    {/* <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{(this.props.match.params.category).toUpperCase()}</h3> */}
-                                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3>
+                                    
+                   <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3>
                   </Jumbotron>
   
                   {(this.props.articleCat && this.props.articleCat.length > 0) &&
