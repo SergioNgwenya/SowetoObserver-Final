@@ -43,7 +43,12 @@ class ViewStory extends React.Component {
                                 :
                                 <img src={loading} alt="loading" style={{ paddingLeft: '50%', height: 80, width: 'auto' }} />
                             }
-
+                            <div class ="wrapper">
+                                <div class = "btn1">
+                                <button type="button"><a href="javascript:history.go(-1)"onMouseOver="self.status.reffer;return true" style={{textDecoration:'none'}}>Back </a></button>
+                                </div>
+                            
+                            </div>
                         </Col>
                         <Col xs="3">
                             <AdCorner />

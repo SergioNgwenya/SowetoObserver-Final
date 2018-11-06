@@ -340,12 +340,74 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
 }
 
+button{
+    background: none;
+    color: black;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #4099FF;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: .6s;
+    overflow: hidden;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:before{
+    content: '';
+    display: block;
+    position:absolute;
+    background: rgba(255, 255, 255, .5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter:blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+}
+
+button:after{
+    content: '';
+    display: block;
+    position:absolute;
+    background: rgba(255, 255, 255, .2);
+    width: 30px;
+    height: 100%;
+    left: 30;
+    top: 0;
+    opacity: 0;
+    filter:blur(30px);
+    transform: translate(-100px) scaleX(-15deg);
+}
+
+button:hover{
+    background: #4099FF;
+    cursor: pointer;
+}
+
+button:hover:before{
+    transform: translate(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+}
+
+button:hover:after{
+    transform: translate(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+}
 .div {
     top: 100px;
     padding: 20px;
     padding-top: 120px;
-    width: 300px;
+    width: 500px;
     resize: both;
+    font-size: 19px;
+   
     /* overflow: auto; */
 }
 

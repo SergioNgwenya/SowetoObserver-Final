@@ -18,11 +18,16 @@ const styles = {
 }
 class Home extends Component {
   render() {
+   
     var mainArticles = [];
     for (var i = 0;  i < 6; i++){
+      
       mainArticles.push(this.props.articles[i]);
+      
     }
+    console.log("mainArt",mainArticles)
     return (
+
       <div style={{paddingTop: 100}}>
         <Container className="Container">
           <Row>
@@ -31,10 +36,10 @@ class Home extends Component {
               <TopHead />
               <hr />
               <h3 style={{fontSize: '30px', fontFamily: 'Nova Flat', fontWeight: 'bold', color: "#D50000" }}>TOP STORIES</h3>
-              {this.props.articles ?
+              {mainArticles ?
                 (<Row>
                   { (this.props.articles && this.props.articles.length > 0) &&
-                    this.props.articles.map((a) => {
+                    mainArticles.map((a) => {
                       return (
                         <div key={i} >
                           <Link to={"/viewstory/" + a._id}><BigNews news={a} /></Link>
@@ -52,7 +57,7 @@ class Home extends Component {
             <Col md='3'>
               <AdCorner />
               <FB_Int />
-              <AdCorner />
+           
             </Col>
           </Row>
         </Container>
@@ -60,8 +65,8 @@ class Home extends Component {
     )
   }
 }
-function mapStateToProps({ auth, articles }) {
-  return { user: auth, articles }
+function mapStateToProps({ auth, articles,category }) {
+  return { user: auth, articles,category }
 }
 export default connect(mapStateToProps)(Home);
 
