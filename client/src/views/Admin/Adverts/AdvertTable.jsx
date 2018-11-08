@@ -150,7 +150,7 @@ console.log(this.props.fetchAdvert);
                 </CardHeader>
                 <CardBody>
                 <ReactTable
-                    defaultPageSize={5}
+                    defaultPageSize={2}
                     className="-striped -highlight"
                     data={adverts}
                     resolveData={data => data.map(row => {

@@ -3,7 +3,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Uncontrolle
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import logo from '../../images/logo.png';
+import logo from '../../images/SO_logo.jpg';
 
 class Navs extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Navs extends React.Component {
     console.log("main",mainCategories)
     return (
       
-      <Navbar expand="md" style={{ height: 70, width: '100%', position: 'fixed', zIndex: 1050, backgroundColor: '#263238', marginBottom: 100 }} >
+      <Navbar expand="md" style={{ height: 70, width: '100%', position: 'fixed', zIndex: 1050, backgroundColor: '#3c67ad', marginBottom: 100 }} >
         <NavbarBrand href="/">
           <img src={logo} alt="Soweto Observer Logo" style={{ height: 50, width: 'auto' }} />
         </NavbarBrand>

@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 class Home extends Component {
-
+  
 
   render() {
     // console.log(this.props);
@@ -26,8 +26,8 @@ class Home extends Component {
                 <Row>
                   <Jumbotron className="Jumbo" >
                                     
-                   <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3>
-                                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{(this.props.match.params.category)}</h3>
+                   <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35, backgroundcolor: '#3c67ad'  }}>{(this.props.match.params.category)}</h3>
+                                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35, }}>{(this.props.match.params.category)}</h3>
                                     {/* <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3> */}
                   </Jumbotron>
   
@@ -49,7 +49,6 @@ class Home extends Component {
             <Col md='3'>
               <AdCorner />
               <FB_Int />
-              <AdCorner />
             </Col>
           </Row>
         </Container>
@@ -59,8 +58,8 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({  articleCat, articles }) {
-  return {   articleCat , articles }
+function mapStateToProps({  articleCat, articles, category }) {
+  return {   articleCat , articles, category }
 }
 
 export default connect(mapStateToProps, actions)(Home);

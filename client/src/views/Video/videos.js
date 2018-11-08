@@ -2,58 +2,56 @@ import React, { Component } from 'react';
 import { Player } from 'video-react';
 import { connect } from 'react-redux';
 import "../../../node_modules/video-react/dist/video-react.css";
-import {  Row, Col } from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
+import "../../assets/css/demo.css";
+import './App.css'
+import AdCorner from '../../views/Home/component/adComponent';
 
-import  './App.css'
+import FB_Int from '../../components/Intergration/FB_Int';
 
- class PlayerExample extends Component {
- 
+class PlayerExample extends Component {
   render() {
     const { videos } = this.props;
-        console.log('VID', videos)
+    console.log('VID', videos)
     return (
-      <div className="container">
-
-      <div className="div">
-      {videos ? <div >
-        {
-
-videos.map((advert) => {
-                return (
-                  
-                  
-                  
-      <Player >
-        
-       
-       <h1>Latest videos</h1>
-      <source src={advert.video} />
-     
-      
-        </Player>
-                
-                )
+      <div style={{paddingTop: 100}}>
+        <Container className="Container">
+          <Row>
+            <Col md='9'>
+        {videos ? <div >
+          {
+            videos.map((VID) => {
+              return (
+                <div className="videosDiv" >
+                <h1>{VID.title}</h1>
+                <Player className="videoContainer">
+                  <source src={VID.video} />
+                </Player>
+                <hr />
+                </div>
+               
+              )
             })
-
+           }
+         </div>
+          :
+          <div>loading.....</div>
         }
-
-    </div>
-
-        :
-
-        <div>loading.....</div>
-
-    }
-    </div>
-
-      </div>
+     
+  </Col>
+  <Col md='3'>
+              <AdCorner />
+              <FB_Int />
+           
+            </Col>
+            </Row>
+            </Container>
+            </div>
     );
   }
 }
 function mapStateToProps(state) {
   return {
-
-
     videos: state.videos
   }
 }

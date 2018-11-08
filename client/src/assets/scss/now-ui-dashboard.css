@@ -226,7 +226,7 @@ Copyright (c) 2015 Daniel Eden
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-brown,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-brown {
   color: #fff;
-  background: #f96332; }
+  background: #3c67ad }
 
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-blue,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-blue {
@@ -373,7 +373,7 @@ Copyright (c) 2015 Daniel Eden
   background-color: #18ce0f; }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-brown ~ .bootstrap-switch-default {
-  background-color: #f96332; }
+  background-color: #3c67ad; }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-blue ~ .bootstrap-switch-default {
   background-color: #2CA8FF; }
@@ -665,7 +665,7 @@ Copyright (c) 2015 Daniel Eden
     top: 1px; }
 
 .btn-primary {
-  background-color: #f96332;
+  background-color: #3c67ad;
   color: #FFFFFF; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:focus, .btn-primary.active:hover,
   .show > .btn-primary.dropdown-toggle,
@@ -674,7 +674,7 @@ Copyright (c) 2015 Daniel Eden
   .show > .btn-primary.btn[aria-haspopup="true"],
   .show > .btn-primary.btn[aria-haspopup="true"]:focus,
   .show > .btn-primary.btn[aria-haspopup="true"]:hover {
-    background-color: #fa7a50;
+    background-color: #3c67ad;
     color: #FFFFFF;
     box-shadow: none; }
   .btn-primary:not([data-action]):hover {
@@ -3014,13 +3014,13 @@ Created using IcoMoon - icomoon.io
       color: #18ce0f; }
   .sidebar[data-color="orange"]:after,
   .off-canvas-sidebar[data-color="orange"]:after {
-    background: #f96332; }
+    background: #3c67ad; }
   .sidebar[data-color="orange"] .nav li.active > a:not([data-toggle="collapse"]),
   .off-canvas-sidebar[data-color="orange"] .nav li.active > a:not([data-toggle="collapse"]) {
-    color: #f96332; }
+    color: #3c67ad; }
     .sidebar[data-color="orange"] .nav li.active > a:not([data-toggle="collapse"]) i,
     .off-canvas-sidebar[data-color="orange"] .nav li.active > a:not([data-toggle="collapse"]) i {
-      color: #f96332; }
+      color: #3c67ad; }
   .sidebar[data-color="red"]:after,
   .off-canvas-sidebar[data-color="red"]:after {
     background: #FF3636; }

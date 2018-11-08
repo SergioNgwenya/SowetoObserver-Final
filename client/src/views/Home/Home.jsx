@@ -3,14 +3,10 @@ import { Row, Col, Container, Card, CardTitle, CardText, CardImg, CardImgOverlay
 import AdCorner from './component/adComponent';
 import TopHead from './component/carouselComponent';
 import FB_Int from '../../components/Intergration/FB_Int';
-
 import Headlines from '../../components/Headline/Headlines';
-
 import { connect } from 'react-redux';
 import BigNews from "../../components/NewsComp/BigNews";
-
 import { Link } from 'react-router-dom';
-
 
 const styles = {
   listStyle: 'none',
@@ -28,7 +24,7 @@ class Home extends Component {
     console.log("mainArt",mainArticles)
     return (
 
-      <div style={{paddingTop: 100}}>
+      <div style={{paddingTop: 90}}>
         <Container className="Container">
           <Row>
             <Col md='9'>

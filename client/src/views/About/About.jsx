@@ -43,7 +43,7 @@ class About extends React.Component {
             <Col md='3'>
               <AdCorner />
               <FB_Int />
-              <AdCorner />
+              
             </Col>
           </Row>
         </Container>
