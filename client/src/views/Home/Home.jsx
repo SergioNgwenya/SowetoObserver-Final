@@ -44,7 +44,7 @@ class Home extends Component {
                     })
                   }
                 </Row>)
-                : <div>loading</div>
+                : <img src= "/images/loading_blue.jpg"></img>
               }
               <hr />
               <h3 style={{fontSize: '30px', fontFamily: 'Nova Flat', fontWeight: 'bold', color: "#D32F2F"}}>HEADLINES</h3>

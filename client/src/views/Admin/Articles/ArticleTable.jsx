@@ -120,10 +120,7 @@ this.props.fetchArticle(id);
         </div>
       },
       //id: "picture"
-    }, {
-      Header: "Status",
-      accessor: "status",
-    },
+    }, 
     {
       Header: 'Date posted',
       accessor: "createdAt",

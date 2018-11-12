@@ -6,7 +6,7 @@ import { Row, Col, Container } from 'reactstrap';
 import "../../assets/css/demo.css";
 import './App.css'
 import AdCorner from '../../views/Home/component/adComponent';
-
+import loader from '../../images/loading_blue.gif';
 import FB_Int from '../../components/Intergration/FB_Int';
 
 class PlayerExample extends Component {
@@ -35,7 +35,7 @@ class PlayerExample extends Component {
            }
          </div>
           :
-          <div>loading.....</div>
+          <img className = "loader" src= {loader} style={{position: 'absolute', paddingVertical:50}}/>
         }
      
   </Col>

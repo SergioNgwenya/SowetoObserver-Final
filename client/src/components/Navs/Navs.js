@@ -3,7 +3,8 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Uncontrolle
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import logo from '../../images/SO_logo.jpg';
+import logo from '../../images/logoSO.png';
+import '../../assets/css/demo.css';
 
 class Navs extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Navs extends React.Component {
     console.log("main",mainCategories)
     return (
       
-      <Navbar expand="md" style={{ height: 70, width: '100%', position: 'fixed', zIndex: 1050, backgroundColor: '#3c67ad', marginBottom: 100 }} >
+      <Navbar expand="md" style={{ height: 70, width: '100%', position: 'fixed', zIndex: 1050, backgroundColor: '#007AB5', marginBottom: 100 }} >
         <NavbarBrand href="/">
           <img src={logo} alt="Soweto Observer Logo" style={{ height: 50, width: 'auto' }} />
         </NavbarBrand>
@@ -47,23 +48,23 @@ class Navs extends React.Component {
               {category?
                 mainCategories.map((cat, i)=>{
                   return(
-                     <NavItem onClick={()=>{this.getId(cat._id)}}><NavLink key={i} to="/category"  className="nav-link">{cat.name}</NavLink></NavItem>
+                    <div className= "drop"><NavItem onClick={()=>{this.getId(cat._id)}} ><NavLink key={i} to="/category"  className="nav-link">{cat.name}</NavLink></NavItem></div> 
                   )
                 })
                 :null
               }
-           <UncontrolledDropdown nav inNavbar>
+           <UncontrolledDropdown nav inNavbar >
                 <DropdownToggle nav caret>
                  More Options
                 </DropdownToggle>
-                <DropdownMenu right>
+                <DropdownMenu right >
 
               <Link to="/category">          
               {category?
                 category.map((cat, i)=>{
                   return(
                   // 
-                    <DropdownItem key={i} onClick={()=>{this.getId(cat._id)}}>
+                    <DropdownItem  key={i} onClick={()=>{this.getId(cat._id)}}>
                      {cat.name}
                    </DropdownItem>
                   //  
@@ -114,6 +115,7 @@ function mapStateToProp(state) {
       user: state.auth,
       category: state.category
      
+      
   }
 }
 

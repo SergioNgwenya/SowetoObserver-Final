@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import BigNews from "../../components/NewsComp/BigNews";
 import { Link } from 'react-router-dom';
+import loader from '../../images/loading_blue.gif';
+import '../../assets/css/demo.css';
 
 
 
@@ -42,7 +44,7 @@ class Home extends Component {
                     })
                   }
                 </Row>
-                : <div>loading</div>
+                : <img className = "loader" src= {loader} style={{position: 'absolute'}}/>
               }
             </Col>
 

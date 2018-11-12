@@ -4,7 +4,7 @@
 
 /* footer */
 .footers{
-    background-color: #3c67ad;
+    background-color: #007AB5;
     color: white;
     /* padding-bottom: 5px;
     padding-top: 15px; */
@@ -422,3 +422,14 @@ button:hover:after{
 /* .videoContainer{
     border: solid  #7686a0;
 } */
+
+.loader{
+    width: 150px;
+   height: 150px;
+   position: absolute;
+   left: 60%;
+   top: 50%; 
+   margin-left: -150px;
+   margin-top: -150px;
+}
+

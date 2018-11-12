@@ -33,22 +33,25 @@ class ViewStory extends React.Component {
                                     <CardImg style={{ paddingLeft: 20, paddingRight: 20, height: 400 }} top src={article.picture} alt="image" />
                                     <Row>
                                     
+                                    
                                         <Col><span style={{float: 'right'}} id="float-left"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
 
                                     </Row>
                                     <CardBody>
                                         {renderHTML(article.body)}
                                     </CardBody>
-                                </Row>
-                                :
-                                <img src={loading} alt="loading" style={{ paddingLeft: '50%', height: 80, width: 'auto' }} />
-                            }
-                            <div class ="wrapper">
+                                    <div class ="wrapper">
                                 <div class = "btn1">
                                 <button type="button"><a href="javascript:history.go(-1)"onMouseOver="self.status.reffer;return true" style={{textDecoration:'none'}}>Back </a></button>
                                 </div>
                             
                             </div>
+                                </Row>
+                                
+                                :
+                                <img src={loading} alt="loading" style={{ paddingLeft: '50%', height: 80, width: 'auto' }} />
+                            }
+                            
                         </Col>
                         <Col xs="3">
                             <AdCorner />
