@@ -22,7 +22,7 @@ class AdCorner extends Component {
                         adverts.map((advert) => {
                             return (
                 <Card style={{ height: '400', width: '100%' }}>
-               <a href={advert.url} className="nav-link"><CardImg src={advert.picture} alt="Ads" /></a>
+               <a href={advert.url} target="_blank" className="nav-link"><CardImg src={advert.picture} alt="Ads" /></a>
                 </Card>
 
 

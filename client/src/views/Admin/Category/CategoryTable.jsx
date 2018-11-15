@@ -4,7 +4,7 @@ import ReactTable from "react-table";
 import 'react-table/react-table.css'
 import {
   Row, Col, Card, CardHeader, CardBody,
-  Nav, NavItem, NavLink, Navbar,
+  Nav, Navbar,
   Modal, ModalHeader, ModalBody,ModalFooter,
 } from 'reactstrap';
 import MDSpinner from "react-md-spinner";
@@ -165,7 +165,7 @@ class Category extends React.Component {
           </Row>
           <Modal isOpen={this.state.confirm} toggle={()=>{this.setState({ confirm: !this.state.confirm})}}>
                   
-                  <ModalHeader>Delete confimartion</ModalHeader>
+          <ModalHeader>Delete confimartion</ModalHeader>
                       <ModalBody>
                           <p> Are you sure you want to delete <b>
                               { this.props.cat ? 

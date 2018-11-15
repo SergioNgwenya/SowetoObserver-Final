@@ -10,7 +10,7 @@ import {
     Button,
     Modal, ModalBody, ModalHeader
 } from "reactstrap";
-
+import MDSpinner from "react-md-spinner";
 import { connect } from "react-redux";
 import * as actions from "../../../actions";
 
@@ -66,28 +66,7 @@ class Forms extends React.Component {
                 <ModalHeader>New Video</ModalHeader>
                 <ModalBody>
                     <Form onSubmit={this.handleSubmit}>
-                       {/* <FormGroup>
-                            <Label>
-                                Select Category
-                            </Label>
-                            <Input
-                                type="select"
-                                onChange={e => {
-                                    this.setState({ select: e.target.value });
-                                }}
-                                name="select"
-                                id="select"
-                            >
-                                <option>--select category--</option>
-                                {
-                                    this.props.category.map((data, index) => (
-                                        <option key={index} value={data._id}>
-                                            {data.name}
-                                        </option>
-                                    ))
-                                }
-                            </Input>
-                        </FormGroup>  */}
+                      
 
                         <FormGroup>
                             <Label>
@@ -115,21 +94,8 @@ class Forms extends React.Component {
                             />
                             <Button outline><i className="now-ui-icons cloud-arrow-upload-94"></i>Pick Media File</Button>
                         </FormGroup>
-
-                        {/* <FormGroup>
-                            <Label>
-                                Article Content
-                            </Label>
-                            <ReactQuill
-                                theme="snow"
-                                modules={Forms.modules}
-                                formats={Forms.formats}
-                                value={this.state.body}
-                                placeholder="article body goes here .. "
-                                onChange={this.onHandleChange}
-                                required
-                            />
-                        </FormGroup> */}
+                        <MDSpinner size="50" />
+                        
                         <FormGroup>
                             <Button outline type="submit">
                                 Submit

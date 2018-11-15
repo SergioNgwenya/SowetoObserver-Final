@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import { Player } from 'video-react';
 import { connect } from 'react-redux';
-
 import "../../../node_modules/video-react/dist/video-react.css";
 import {  Row, Col } from 'reactstrap';
-
 // import "../../../node_modules/video-react/dist/video-react.css";
-
-
-
 import  './App.css'
 
  class PlayerExample extends Component {
@@ -17,48 +12,31 @@ import  './App.css'
     const { videos } = this.props;
         console.log('VID', videos)
     return (
-      <div className="container">
-
+      <Row>
+        <Col>
       <div className="div">
       {videos ? <div >
         {
-
 videos.map((advert) => {
-                return (
-                  
-                  
-                  
-      <Player >
-        
-       
-       <h1>Latest videos</h1>
-      <source src={advert.video} />
-     
-      
+                return (        
+       <Player >
+         <source src={advert.video} /> 
         </Player>
-                
                 )
             })
-
         }
-
-    </div>
-
+        </div>
         :
-
         <div>loading.....</div>
-
     }
-    </div>
-
-      </div>
+       </div>
+       </Col>
+       </Row>
     );
   }
 }
 function mapStateToProps(state) {
   return {
-
-
     videos: state.videos
   }
 }

@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS,FETCH_VIDEO,FETCH_VIDEOS, FETCH_ARTICLES_BY_CATEGORY } from './types';
+import { FETCH_CATEGORY, FETCH_USER, FETCH_ARTICLE,GET_RES,FETCH_CAT, FETCH_ADVERT,FETCH_ADVERTS,FETCH_VIDEO,FETCH_VIDEOS, FETCH_ARTICLES_BY_CATEGORY,DELETE_VIDEOS } from './types';
 import { _fetchArticles } from './article';
 
 
@@ -92,11 +92,11 @@ export const fetchCat= (id) => async dispatch => {
 };
 
 //FETCHING VIDEO ACTIONS
-export const fetchVideo= (id) => async dispatch => {
+export const fetchVid= (id) => async dispatch => {
    
-    const res = await fetch('/api/video/'+ id );
+    const res = await fetch('/api/video/' +id);
     const data = await res.json();
- console.log('ID',data)
+ 
     dispatch({ type: FETCH_VIDEO, payload: data });
 };
 
@@ -110,4 +110,14 @@ export const fetchVideos = () => async dispatch => {
     } catch (err) {
         console.error(err)
     }
+};
+
+//deleting all videos
+export const _deleteVideo = (id) => async dispatch => {
+    const res = await fetch('/api/video/' + id, {
+        method: "DELETE"
+    });
+    const data = await res.json();
+    
+    dispatch({ type: DELETE_VIDEOS, payload: data })
 };

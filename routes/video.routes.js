@@ -58,7 +58,7 @@ router.get('/api/video', (req, res, next)=>{
     });
 
 //Request for getting a single Users (GET single user)
-router.get('/api/video/:id', function(req, res){
+router.get('/api/video/:id', function(req, res,next){
     video.findOne({_id:req.params.id}, function(err,foundvideo){
         if(err) return next(err);
         res.json(foundvideo);
@@ -69,10 +69,8 @@ router.get('/api/video/:id', function(req, res){
 
 
 
-
-
 //Request for and deleting a video (GET single video)
-router.delete('/api/video/:id', function(req, res){
+router.delete('/api/video/:id', function(req, res,next){
     video.findByIdAndRemove({_id:req.params.id}, function(err,foundvideo){
         if(err){
             return next(err)

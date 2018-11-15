@@ -20,12 +20,14 @@ class Home extends Component {
   render() {
    
     var mainArticles = [];
+    
     for (var i = 0;  i < 6; i++){
-      
+     
+
       mainArticles.push(this.props.articles[i]);
       
     }
-    console.log("mainArt",mainArticles)
+  
     return (
 
       <div style={{paddingTop: 100}}>

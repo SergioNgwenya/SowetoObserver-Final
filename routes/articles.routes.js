@@ -78,7 +78,7 @@ router.get('/api/articles', (req, res,next)=>{
     // });
     Article.find()
     .populate("category")
-    .sort({createAt: -1})
+    .sort({createdAt:-1})
     .exec((err, article)=>{
         if(err){ return next(err)}
         res.json(article)

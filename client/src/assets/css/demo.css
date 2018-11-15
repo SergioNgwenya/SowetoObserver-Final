@@ -400,16 +400,6 @@ button:hover:after{
     opacity: 1;
     transition: .7s;
 }
-.div {
-    top: 100px;
-    padding: 20px;
-    padding-top: 120px;
-    width: 500px;
-    resize: both;
-    font-size: 19px;
-   
-    /* overflow: auto; */
-}
 
 .dropdown-menu .dropdown-item {
     color: black;

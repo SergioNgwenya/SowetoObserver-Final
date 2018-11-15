@@ -14,7 +14,8 @@ class Home extends Component {
 
 
   render() {
-    // console.log(this.props);
+    const articles=this.props;
+    console.log('catimo',articles);
     return (
       <div>
         <Navs user={this.props.user} />
@@ -25,7 +26,7 @@ class Home extends Component {
               {this.props.articleCat ?
                 <Row>
                   <Jumbotron className="Jumbo" >
-                                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{(this.props.match.params.category)}</h3>
+    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{}</h3>
                                     {/* <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3> */}
                   </Jumbotron>
   
@@ -47,7 +48,7 @@ class Home extends Component {
             <Col md='3'>
               <AdCorner />
               <FB_Int />
-              <AdCorner />
+          
             </Col>
           </Row>
         </Container>
@@ -57,8 +58,8 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({  articleCat, articles }) {
-  return {   articleCat , articles }
+function mapStateToProps({  articleCat, articles,category }) {
+  return {   articleCat , articles,category }
 }
 
 export default connect(mapStateToProps, actions)(Home);

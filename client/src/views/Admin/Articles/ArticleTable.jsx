@@ -98,9 +98,11 @@ this.props.fetchArticle(id);
   }
 
   render() {
-    const { articles } = this.props;
-    
-    
+    const { articles,article } = this.props;
+
+    console.log(articles)
+  
+
     const columns = [{
       Header: "#",
       id: "row",
@@ -161,6 +163,8 @@ this.props.fetchArticle(id);
                     data={articles}
                     resolveData={data => data.map(row => {
                       row.createdAt = moment(row.createdAt).format('MMM Do YYYY, h:mm a');
+                      
+
                       return row;
                     })}
                     columns={columns}
