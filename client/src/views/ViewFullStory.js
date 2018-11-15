@@ -33,27 +33,30 @@ class ViewStory extends React.Component {
                                     <CardImg style={{ paddingLeft: 20, paddingRight: 20, height: 400 }} top src={article.picture} alt="image" />
                                     <Row>
                                     
+                                    
                                         <Col><span style={{float: 'right'}} id="float-left"><i class="fa fa-clock"></i><Moment format="DD MMM YYYY HH:mm a">{article.createdAt}</Moment></span></Col>
 
                                     </Row>
                                     <CardBody>
                                         {renderHTML(article.body)}
                                     </CardBody>
-                                </Row>
-                                :
-                                <img src={loading} alt="loading" style={{ paddingLeft: '50%', height: 80, width: 'auto' }} />
-                            }
-                            <div class ="wrapper">
+                                    <div class ="wrapper">
                                 <div class = "btn1">
                                 <button type="button"><a href="javascript:history.go(-1)"onMouseOver="self.status.reffer;return true" style={{textDecoration:'none'}}>Back </a></button>
                                 </div>
                             
                             </div>
+                                </Row>
+                                
+                                :
+                                <img src={loading} alt="loading" style={{ paddingLeft: '50%', height: 80, width: 'auto' }} />
+                            }
+                            
                         </Col>
                         <Col xs="3">
                             <AdCorner />
                             <div class="fb-page" data-href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs">Soweto Observer</a></blockquote></div>
-                            <AdCorner />
+                           
                         </Col>
                     </Row>
                 </Container>

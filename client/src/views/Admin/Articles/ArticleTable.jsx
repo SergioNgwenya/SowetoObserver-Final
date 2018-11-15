@@ -98,11 +98,9 @@ this.props.fetchArticle(id);
   }
 
   render() {
-    const { articles,article } = this.props;
-
-    console.log(articles)
-  
-
+    const { articles } = this.props;
+    
+    console.log("Nkati",articles);
     const columns = [{
       Header: "#",
       id: "row",
@@ -122,10 +120,7 @@ this.props.fetchArticle(id);
         </div>
       },
       //id: "picture"
-    }, {
-      Header: "Status",
-      accessor: "status",
-    },
+    }, 
     {
       Header: 'Date posted',
       accessor: "createdAt",
@@ -242,7 +237,7 @@ function matchDatesToProps(state) {
     articles: state.articles,
     article: state.article,
     respond: state.articles.respond,
-    adverts: state.adverts
+   
    
 
     

@@ -7,11 +7,13 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import BigNews from "../../components/NewsComp/BigNews";
 import { Link } from 'react-router-dom';
+import loader from '../../images/loading_blue.gif';
+import '../../assets/css/demo.css';
 
 
 
 class Home extends Component {
-
+  
 
   render() {
     const articles=this.props;
@@ -26,7 +28,9 @@ class Home extends Component {
               {this.props.articleCat ?
                 <Row>
                   <Jumbotron className="Jumbo" >
-    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>{}</h3>
+                                    
+                   <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35, backgroundcolor: '#3c67ad'  }}>{(this.props.match.params.category)}</h3>
+                                    <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35, }}>{(this.props.match.params.category)}</h3>
                                     {/* <h3 className="lead" style={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Nova Flat', fontSize: 35 }}>Hello</h3> */}
                   </Jumbotron>
   
@@ -41,14 +45,13 @@ class Home extends Component {
                     })
                   }
                 </Row>
-                : <div>loading</div>
+                : <img className = "loader" src= {loader} style={{position: 'absolute'}}/>
               }
             </Col>
 
             <Col md='3'>
               <AdCorner />
               <FB_Int />
-          
             </Col>
           </Row>
         </Container>
@@ -58,8 +61,8 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({  articleCat, articles,category }) {
-  return {   articleCat , articles,category }
+function mapStateToProps({  articleCat, articles, category }) {
+  return {   articleCat , articles, category }
 }
 
 export default connect(mapStateToProps, actions)(Home);

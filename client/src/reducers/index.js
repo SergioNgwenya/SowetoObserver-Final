@@ -7,6 +7,7 @@ import advertReducer from './advertReducer';
 import catRed from './catReducer';
 import adverts from './advertsRedcuer';
 import articleCatRed from './catArticleReducer'; 
+import delVideoReducer from "./delVideoReducer";
 
 import videoReducer from './videoReducer'
 import videosReducer from './videosReducers';
@@ -15,6 +16,7 @@ import videosReducer from './videosReducers';
 export default combineReducers({
     auth: authReducer,
     articles: articlesReducers,
+    delVideo:delVideoReducer,
     category: categoryReducer,
     article: articleRed,
     advert: advertReducer,

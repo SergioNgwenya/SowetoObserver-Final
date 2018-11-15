@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Admin from './layouts/Dashboard/Dashboard';
 import * as actions from './actions';
 import { connect } from 'react-redux';
+import loader from '../src/images/loading_blue.gif';
 
 
 
@@ -54,7 +55,7 @@ class App extends Component {
                         <AdminRoute path="/admin" component={Admin} />
                         <Footers user={this.props.user} />
                     </div> 
-                    :<div>heloo</div>
+                    :<img className = "loader" src= {loader} style={{position: 'absolute'}}/>
                     }  
 
                 </Router>

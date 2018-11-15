@@ -4,7 +4,7 @@
 
 /* footer */
 .footers{
-    background-color: #424242;
+    background-color: #007AB5;
     color: white;
     /* padding-bottom: 5px;
     padding-top: 15px; */
@@ -404,3 +404,22 @@ button:hover:after{
 .dropdown-menu .dropdown-item {
     color: black;
 }
+.videosDiv{
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 100px;
+}
+/* .videoContainer{
+    border: solid  #7686a0;
+} */
+
+.loader{
+    width: 150px;
+   height: 150px;
+   position: absolute;
+   left: 60%;
+   top: 50%; 
+   margin-left: -150px;
+   margin-top: -150px;
+}
+

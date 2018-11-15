@@ -15,24 +15,10 @@ import * as FontAwesome from 'react-icons/lib/fa';
 import AddVideo from './AddVideo';
 import ReactPlayer from 'react-player';
 
-//style for icons
-const styleIcons = {
-  button: {
-    borderColor: "rgba(0,0,0,0.03)",
-    backgroundColor: "rgba(0,0,0,0.03)",
-    color: "#0d0e0f",
-    cursor: "pointer",
-    borderWidth: ".1px",
-    borderRadius: "50px",
-    margin: "2px",
-    position: "center",
-    decoration: "none",
-  },
-}
-//buttons for modal
 const style = {
   paddingLeft: "50%",
 }
+
 const styleButton = {
   button: {
   borderColor: "#0ad14c",
@@ -87,8 +73,20 @@ class Videos extends React.Component {
   }
   onHandleDelete(id) {
     
-    this.props.fetchVid(id);
-    this.setState({ confirm: !this.state.confirm })
+    this.props._deleteVideo(this.props.video._id)
+    this.setState({ confirm: !this.state.confirm }) 
+    
+    this.props.fetchVideos();
+  }
+  onDelete() {
+    
+    this.props._deleteVideo(this.props.video._id)
+    this.setState({ confirm: !this.state.confirm }) 
+    
+    
+   
+}
+ 
 
   
   }
@@ -107,8 +105,11 @@ class Videos extends React.Component {
   }
  
   render() {
-    const { videos} = this.props;
-    console.log(videos)
+    const { videos,video } = this.props;
+    
+    
+    console.log('nkati4ume2',videos);
+    console.log('4ume2',video);
     const columns = [{
       Header: "#",
       id: "row",
@@ -144,8 +145,8 @@ class Videos extends React.Component {
       maxWidth: 70,
       Cell: row => (
         <div>
- <span onClick={this.onDelete.bind(this, row.original._id)}><FontAwesome.FaTrash /></span>
- <span onClick={this.onHandleEdit.bind(this, row.original._id)}><FontAwesome.FaEdit /></span>
+          <span onClick={this.onDelete.bind(this, row.original._id)}><FontAwesome.FaTrash /></span>
+          <span onClick={this.onHandleEdit.bind(this, row.original._id)}><FontAwesome.FaEdit /></span>
         </div>
       )
     }]
@@ -219,26 +220,27 @@ class Videos extends React.Component {
             <Button outline onClick={this.closeModal}>Cancel</Button>
           </ModalFooter>
         </Modal>
-        <Modal isOpen={this.state.confirm} toggle={()=>{this.setState({ confirm: !this.state.confirm})}}>
+
+         {/* Modal used to confirm delete */}
+         <Modal isOpen={this.state.confirm} toggle={()=>{this.setState({ confirm: !this.state.confirm})}}>
                   
                   <ModalHeader>Delete confimartion</ModalHeader>
-                  <ModalBody>
-                  <p> Are you sure you want to delete <b>
-                  {this.props.video ? 
-                   this.props.video.title : 
-                  <div style={style}>
-                 
-                   </div>} 
-                   </b> ? 
-                    </p>
-                              </ModalBody>
-        
-                          <ModalFooter>
-                          <button style={styleButton.button} onClick={this.onDelete.bind(this)} >Yes</button>
-                       <button onClick={() => { this.setState({ confirm: !this.state.confirm }) }} style={clearButton.button} >No</button>
-                            </ModalFooter>
-                    </Modal>
-                    <MDSpinner size="50" />
+                      <ModalBody>
+                          <p> Are you sure you want to delete <b>
+                              { this.props.video ? 
+                                  this.props.video.title : 
+                                    <div style={style}>
+                                      <MDSpinner size="50" />
+                                    </div>} 
+                                  </b> ? 
+                                </p>
+                      </ModalBody>
+
+                    <ModalFooter>
+                        <button style={styleButton.button} onClick={this.onDelete.bind(this)} >Yes</button>
+                        <button onClick={() => { this.setState({ confirm: !this.state.confirm }) }} style={clearButton.button} >No</button>
+                    </ModalFooter>
+            </Modal>
       </div>
     );
   }
@@ -247,8 +249,12 @@ class Videos extends React.Component {
 function matchDatesToProps(state) {
   return {
     videos: state.videos,
-    video:state.video,
-    category:state.category
+    video: state.video,
+    category:state.category,
+    respond: state.videos.respond,
+    delVideo:state.delVideo
+    
+
   }
 }
 export default connect(matchDatesToProps, actions)(Videos);
